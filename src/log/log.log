@@ -1,0 +1,17 @@
+2019/10/15 10:56:15.832 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[47] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMTQwMzQsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IuazqOmUgOi0puWPtyIsImFkbWluIjpmYWxzZX0.AzspGJxx4_9_4UDVo9c-vyxlAr4THXi2gOTYHZUFq-s] Origin:[http://localhost:4200] Referer:[http://localhost:4200/login] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0001b0100 <nil> 47 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:53558 /login <nil> <nil> <nil> 0xc0001b0140}
+2019/10/15 10:56:15.835 [I] [tools.go:126]  &{0xc0001c6000 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/15 10:56:15.837 [I] [handleFunc.go:18]  map[data:map[password:1111 username:22222]]
+2019/10/15 10:56:15.839 [E] [t_user.go:74]  write tcp 202.192.81.37:51589->119.23.40.146:5432: wsasend: An existing connection was forcibly closed by the remote host.
+2019/10/15 10:56:15.840 [E] [t_user.go:47]  write tcp 202.192.81.37:51589->119.23.40.146:5432: wsasend: An existing connection was forcibly closed by the remote host.
+2019/10/15 10:56:15.841 [I] [handleFunc.go:35]  false
+2019/10/15 10:56:15.841 [I] [tools.go:64]  0
+2019/10/15 10:56:15.842 [I] [tools.go:65]  {0 账号或密码不正确 0 /login POST 0 0}
+2019/10/15 10:56:57.519 [I] [tools.go:64]  
+2019/10/15 10:56:57.522 [I] [tools.go:65]  {0 注销成功  /logout GET 0 0}
+2019/10/15 10:57:08.892 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[47] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzNjc0MTcsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IuazqOmUgOi0puWPtyIsImFkbWluIjpmYWxzZX0.mOh8E_ZvJt2uP4fmtAIMZTcr7UtYKSdZVqnrMxffgNQ] Origin:[http://localhost:4200] Referer:[http://localhost:4200/login] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000034580 <nil> 47 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:53630 /login <nil> <nil> <nil> 0xc0000345c0}
+2019/10/15 10:57:08.910 [I] [tools.go:126]  &{0xc0000044c0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/15 10:57:08.973 [I] [handleFunc.go:18]  map[data:map[password:1111 username:22222]]
+2019/10/15 10:57:09.121 [I] [handleFunc.go:35]  true
+2019/10/15 10:57:09.153 [I] [handleFunc.go:58]  token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzNjc0MjksImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjIyMjIyIiwiYWRtaW4iOmZhbHNlfQ.5VJ5xZfQn9Tq61OCcQ-OVbkhZLlv0qrvomjIcFkt_RE; HttpOnly
+2019/10/15 10:57:09.174 [I] [tools.go:64]  1
+2019/10/15 10:57:09.175 [I] [tools.go:65]  {0 登录成功 1 /login POST 0 0}

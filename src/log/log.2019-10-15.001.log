@@ -1,0 +1,263 @@
+2019/10/02 10:11:10.025 [I] [initDB.go:36]  DB connected!
+2019/10/02 10:25:08.807 [E] [tools.go:133]  r.Body is nil
+2019/10/02 10:25:08.824 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 13:52:10.247 [E] [tools.go:133]  r.Body is nil
+2019/10/02 13:52:10.286 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 13:52:12.933 [E] [tools.go:133]  r.Body is nil
+2019/10/02 13:52:12.961 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 13:52:29.290 [W] [handleFunc.go:18]  读取表单参数错误
+2019/10/02 13:56:23.366 [E] [tools.go:133]  r.Body is nil
+2019/10/02 13:56:23.375 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 13:56:23.967 [E] [tools.go:133]  r.Body is nil
+2019/10/02 13:56:23.974 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 13:56:49.569 [E] [tools.go:133]  r.Body is nil
+2019/10/02 13:56:49.571 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 13:56:49.726 [E] [tools.go:133]  r.Body is nil
+2019/10/02 13:56:49.733 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 14:03:13.889 [E] [tools.go:133]  r.Body is nil
+2019/10/02 14:03:13.899 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 14:03:14.150 [E] [tools.go:133]  r.Body is nil
+2019/10/02 14:03:14.170 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 14:05:03.992 [E] [tools.go:133]  r.Body is nil
+2019/10/02 14:05:03.993 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 14:05:04.259 [E] [tools.go:133]  r.Body is nil
+2019/10/02 14:05:04.260 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 14:05:13.818 [E] [tools.go:133]  r.Body is nil
+2019/10/02 14:05:13.851 [E] [handleFunc.go:12]  r.Body is nil
+2019/10/02 14:05:19.220 [W] [handleFunc.go:18]  读取表单参数错误
+2019/10/02 14:05:23.388 [W] [handleFunc.go:18]  读取表单参数错误
+2019/10/02 14:05:29.398 [W] [handleFunc.go:18]  读取表单参数错误
+2019/10/02 14:05:30.869 [W] [handleFunc.go:18]  读取表单参数错误
+2019/10/02 14:16:34.770 [I] [initDB.go:36]  DB connected!
+2019/10/02 14:17:30.068 [I] [initDB.go:36]  DB connected!
+2019/10/02 14:18:26.445 [W] [handleFunc.go:18]  读取表单参数错误
+2019/10/02 14:19:39.733 [I] [initDB.go:36]  DB connected!
+2019/10/02 14:19:56.165 [I] [handleFunc.go:16]  map[]
+2019/10/02 14:19:56.168 [W] [handleFunc.go:19]  读取表单参数错误
+2019/10/02 14:21:23.190 [I] [initDB.go:36]  DB connected!
+2019/10/02 14:21:45.284 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[2] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 2 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56376 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/02 14:21:45.290 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x6704a0}
+2019/10/02 14:21:45.292 [I] [handleFunc.go:16]  map[]
+2019/10/02 14:21:45.294 [W] [handleFunc.go:19]  读取表单参数错误
+2019/10/02 14:25:09.290 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[46] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000184080 <nil> 46 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56654 /login <nil> <nil> <nil> 0xc0001840c0}
+2019/10/02 14:25:09.292 [I] [tools.go:125]  &{0xc000196000 <nil> <nil> true true {0 0} false false false 0x6704a0}
+2019/10/02 14:25:09.293 [I] [handleFunc.go:16]  map[data:map[password:33333 username:222]]
+2019/10/02 14:25:09.294 [I] [handleFunc.go:32]  222 33333
+2019/10/13 16:16:59.855 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:17:10.393 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:55556 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/13 16:17:10.433 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:17:10.443 [I] [handleFunc.go:17]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:17:10.444 [I] [handleFunc.go:33]  3333333 555555555555555
+2019/10/13 16:19:43.375 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:19:58.681 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:55701 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/13 16:19:58.699 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:19:58.704 [I] [handleFunc.go:17]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:19:58.737 [I] [handleFunc.go:33]  3333333 555555555555555
+2019/10/13 16:21:58.133 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:22:05.443 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:55759 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/13 16:22:05.452 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:22:05.459 [I] [handleFunc.go:17]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:22:05.519 [I] [handleFunc.go:33]  3333333 555555555555555
+2019/10/13 16:23:00.389 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:23:06.628 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000128180 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:55793 /login <nil> <nil> <nil> 0xc0001281c0}
+2019/10/13 16:23:06.635 [I] [tools.go:125]  &{0xc0000f0020 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:23:06.638 [I] [handleFunc.go:17]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:23:06.642 [I] [handleFunc.go:33]  3333333 555555555555555
+2019/10/13 16:23:06.686 [I] [t_user.go:73]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:30:28.516 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:30:40.304 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56031 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/13 16:30:40.308 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:30:40.311 [I] [handleFunc.go:17]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:30:40.313 [I] [handleFunc.go:33]  3333333 555555555555555
+2019/10/13 16:30:40.314 [I] [t_user.go:62]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:32:00.634 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:32:07.696 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000508c0 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56058 /login <nil> <nil> <nil> 0xc000050900}
+2019/10/13 16:32:07.703 [I] [tools.go:125]  &{0xc00004da20 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:32:07.706 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:32:07.709 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 16:32:07.711 [I] [t_user.go:67]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:32:07.757 [I] [t_user.go:42]  000000000
+2019/10/13 16:36:34.940 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:36:39.647 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56128 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/13 16:36:39.680 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:36:39.684 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:36:39.686 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 16:36:39.688 [I] [t_user.go:69]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:36:39.689 [I] [t_user.go:44]  000000000 3333333
+2019/10/13 16:36:39.690 [I] [t_user.go:46]  { false}
+2019/10/13 16:42:10.316 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:42:16.912 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc00012a180 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56207 /login <nil> <nil> <nil> 0xc00012a1c0}
+2019/10/13 16:42:16.942 [I] [tools.go:125]  &{0xc0000f0020 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:42:16.970 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:42:16.984 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 16:42:16.985 [I] [t_user.go:67]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:42:16.986 [I] [t_user.go:43]  000000000 3333333
+2019/10/13 16:42:16.987 [I] [t_user.go:45]  
+2019/10/13 16:45:41.406 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:45:48.364 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc00013c180 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56262 /login <nil> <nil> <nil> 0xc00013c1c0}
+2019/10/13 16:45:48.401 [I] [tools.go:125]  &{0xc000154000 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:45:48.405 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:45:48.407 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 16:45:48.408 [I] [t_user.go:73]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:48:39.837 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:48:44.979 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000148180 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56312 /login <nil> <nil> <nil> 0xc0001481c0}
+2019/10/13 16:48:45.000 [I] [tools.go:125]  &{0xc000108020 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:48:45.004 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:48:45.006 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 16:48:45.008 [I] [t_user.go:73]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:50:29.221 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:50:35.182 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56339 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/13 16:50:35.185 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:50:35.186 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:50:35.187 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 16:50:35.227 [I] [t_user.go:81]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:50:35.288 [I] [t_user.go:45]  00000000 3333333
+2019/10/13 16:52:26.338 [I] [initDB.go:36]  DB connected!
+2019/10/13 16:52:34.368 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56379 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/13 16:52:34.371 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:52:34.372 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:52:34.373 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 16:52:34.375 [I] [t_user.go:83]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:52:34.404 [I] [t_user.go:45]  00000000 3333333
+2019/10/13 16:52:34.405 [I] [t_user.go:46]  <nil>
+2019/10/13 16:52:34.406 [I] [t_user.go:47]  ddddddddd
+2019/10/13 16:55:18.410 [I] [initDB.go:25]  host=119.23.40.146 port=5432 user=postgres password=postgres dbname=sgts sslmode=disable
+2019/10/13 16:55:18.467 [I] [initDB.go:38]  DB connected!
+2019/10/13 16:55:18.478 [I] [initDB.go:39]  &{0 {host=119.23.40.146 port=5432 user=postgres password=postgres dbname=sgts sslmode=disable 0xa8bb68} 0 {0 0} [0xc00012c100] map[] 0 1 0xc0001240c0 0xc0000360c0 false map[0xc00012c100:map[0xc00012c100:true]] map[] 20 40 0 <nil> 0 0 0 0x53f930}
+2019/10/13 16:58:28.661 [I] [initDB.go:25]  host=119.23.40.146 port=5432 user=postgres password=postgres dbname=sgts sslmode=disable
+2019/10/13 16:58:28.703 [I] [initDB.go:38]  DB connected!
+2019/10/13 16:58:28.750 [I] [initDB.go:39]  &{0 {host=119.23.40.146 port=5432 user=postgres password=postgres dbname=sgts sslmode=disable 0xa8bb68} 0 {0 0} [0xc0000d2200] map[] 0 1 0xc00003f7a0 0xc0000cc2a0 false map[0xc0000d2200:map[0xc0000d2200:true]] map[] 20 40 0 <nil> 0 0 0 0x53f930}
+2019/10/13 16:58:36.914 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000142180 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56505 /login <nil> <nil> <nil> 0xc0001421c0}
+2019/10/13 16:58:36.918 [I] [tools.go:125]  &{0xc00015a000 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 16:58:36.964 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 16:58:36.966 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 16:58:36.966 [I] [t_user.go:83]  <nil>
+2019/10/13 16:58:36.967 [I] [t_user.go:84]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 16:58:36.967 [I] [t_user.go:45]  00000000 3333333
+2019/10/13 16:58:36.969 [I] [t_user.go:46]  <nil>
+2019/10/13 16:58:36.969 [I] [t_user.go:47]  ddddddddd
+2019/10/13 17:01:06.771 [I] [initDB.go:38]  DB connected!
+2019/10/13 17:01:14.970 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[60] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc00012a180 <nil> 60 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:56569 /login <nil> <nil> <nil> 0xc00012a1c0}
+2019/10/13 17:01:14.977 [I] [tools.go:125]  &{0xc0000f0020 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 17:01:14.982 [I] [handleFunc.go:18]  map[data:map[password:555555555555555 username:3333333]]
+2019/10/13 17:01:15.061 [I] [handleFunc.go:34]  3333333 555555555555555
+2019/10/13 17:01:15.075 [I] [t_user.go:76]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 17:01:15.112 [E] [t_user.go:47]  pq: relation "t_user" does not exist
+2019/10/13 17:01:15.113 [I] [t_user.go:78]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 17:01:15.153 [E] [t_user.go:80]  pq: relation "t_user" does not exist
+2019/10/13 17:01:15.170 [E] [handleFunc.go:37]  数据库检索验证用户信息失败, err: pq: relation "t_user" does not exist
+2019/10/13 19:45:27.099 [I] [initDB.go:38]  DB connected!
+2019/10/13 19:45:51.407 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[63] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000050800 <nil> 63 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:64861 /login <nil> <nil> <nil> 0xc000050840}
+2019/10/13 19:45:51.507 [I] [tools.go:125]  &{0xc00004cd00 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 19:45:51.508 [I] [handleFunc.go:18]  map[data:map[password:666666666666666 username:3333333333]]
+2019/10/13 19:45:51.516 [I] [handleFunc.go:34]  3333333333 666666666666666
+2019/10/13 19:45:51.518 [I] [t_user.go:76]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 19:45:51.553 [I] [t_user.go:78]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 19:45:51.560 [I] [handleFunc.go:41]  333333333333333333
+2019/10/13 19:45:51.561 [I] [handleFunc.go:53]  token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjYzNTEsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjMzMzMzMzMzMzMiLCJhZG1pbiI6ZmFsc2V9.p4FxxZTTJVxcibZYQDdMeO6wcvCchB4MGJ36bI7Bl_c; HttpOnly
+2019/10/13 19:45:51.562 [I] [handleFunc.go:59]  dffdd
+2019/10/13 19:49:48.125 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[58] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjYzNTEsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjMzMzMzMzMzMzMiLCJhZG1pbiI6ZmFsc2V9.p4FxxZTTJVxcibZYQDdMeO6wcvCchB4MGJ36bI7Bl_c] Origin:[http://localhost:4200] Referer:[http://localhost:4200/home] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000050980 <nil> 58 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:65158 /login <nil> <nil> <nil> 0xc0000509c0}
+2019/10/13 19:49:48.168 [I] [tools.go:125]  &{0xc00004d260 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 19:49:48.213 [I] [handleFunc.go:18]  map[data:map[password:00000000000000 username:666666]]
+2019/10/13 19:49:48.215 [I] [handleFunc.go:34]  666666 00000000000000
+2019/10/13 19:49:48.217 [I] [t_user.go:76]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 19:49:48.267 [I] [t_user.go:78]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 19:49:48.275 [I] [handleFunc.go:41]  333333333333333333
+2019/10/13 19:49:48.276 [I] [handleFunc.go:53]  token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjY1ODgsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjY2NjY2NiIsImFkbWluIjpmYWxzZX0.p7lraDXzjeCSuULX5M548bLfRmrmJdr_ql4EVhT61a0; HttpOnly
+2019/10/13 19:49:48.277 [I] [handleFunc.go:59]  dffdd
+2019/10/13 19:52:35.716 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[58] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjY1ODgsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjY2NjY2NiIsImFkbWluIjpmYWxzZX0.p7lraDXzjeCSuULX5M548bLfRmrmJdr_ql4EVhT61a0] Origin:[http://localhost:4200] Referer:[http://localhost:4200/home] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000050b00 <nil> 58 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:65323 /login <nil> <nil> <nil> 0xc000050b40}
+2019/10/13 19:52:35.766 [I] [tools.go:125]  &{0xc00004d660 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 19:52:35.817 [I] [handleFunc.go:18]  map[data:map[password:00000000000000 username:666666]]
+2019/10/13 19:52:35.857 [I] [handleFunc.go:34]  666666 00000000000000
+2019/10/13 19:52:35.871 [I] [t_user.go:76]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 19:52:35.893 [I] [t_user.go:78]  ISSSSSSSSSSSSSSSSSSS
+2019/10/13 19:52:35.901 [I] [handleFunc.go:41]  333333333333333333
+2019/10/13 19:52:35.902 [I] [handleFunc.go:53]  token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjY3NTUsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjY2NjY2NiIsImFkbWluIjpmYWxzZX0._XeDC91pryq0n3-S4vqu1pjeHnb6LbNP9kTng0eaeOk; HttpOnly
+2019/10/13 19:52:35.902 [I] [handleFunc.go:59]  dffdd
+2019/10/13 20:19:51.011 [I] [initDB.go:38]  DB connected!
+2019/10/13 20:20:14.923 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[48] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjY3NTUsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjY2NjY2NiIsImFkbWluIjpmYWxzZX0._XeDC91pryq0n3-S4vqu1pjeHnb6LbNP9kTng0eaeOk] Origin:[http://localhost:4200] Referer:[http://localhost:4200/home] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 48 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:54800 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/13 20:20:14.927 [I] [tools.go:125]  &{0xc000004080 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 20:20:14.928 [I] [handleFunc.go:18]  map[data:map[password:777 username:3333333]]
+2019/10/13 20:20:14.978 [E] [t_user.go:25]  sql: no rows in result set
+2019/10/13 20:20:15.011 [E] [handleFunc.go:45]  数据库检索验证用户信息失败, err: sql: no rows in result set
+2019/10/13 20:29:22.891 [I] [initDB.go:38]  DB connected!
+2019/10/13 20:29:32.063 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[48] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjY3NTUsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjY2NjY2NiIsImFkbWluIjpmYWxzZX0._XeDC91pryq0n3-S4vqu1pjeHnb6LbNP9kTng0eaeOk] Origin:[http://localhost:4200] Referer:[http://localhost:4200/home] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc00014a180 <nil> 48 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:52892 /login <nil> <nil> <nil> 0xc00014a1c0}
+2019/10/13 20:29:32.107 [I] [tools.go:125]  &{0xc000108020 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 20:29:32.109 [I] [handleFunc.go:18]  map[data:map[password:777 username:3333333]]
+2019/10/13 20:29:32.135 [I] [handleFunc.go:35]  false
+2019/10/13 20:29:32.203 [E] [t_user.go:25]  sql: no rows in result set
+2019/10/13 20:29:32.208 [E] [handleFunc.go:46]  数据库检索验证用户信息失败, err: sql: no rows in result set
+2019/10/13 20:30:47.951 [I] [initDB.go:38]  DB connected!
+2019/10/13 20:30:53.357 [I] [tools.go:124]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[48] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjY3NTUsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjY2NjY2NiIsImFkbWluIjpmYWxzZX0._XeDC91pryq0n3-S4vqu1pjeHnb6LbNP9kTng0eaeOk] Origin:[http://localhost:4200] Referer:[http://localhost:4200/home] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc00012c180 <nil> 48 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:52951 /login <nil> <nil> <nil> 0xc00012c1c0}
+2019/10/13 20:30:53.376 [I] [tools.go:125]  &{0xc0000f0020 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 20:30:53.415 [I] [handleFunc.go:18]  map[data:map[password:777 username:3333333]]
+2019/10/13 20:30:53.456 [I] [handleFunc.go:35]  false
+2019/10/13 20:32:38.837 [I] [initDB.go:38]  DB connected!
+2019/10/13 20:32:47.535 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[48] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjY3NTUsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjY2NjY2NiIsImFkbWluIjpmYWxzZX0._XeDC91pryq0n3-S4vqu1pjeHnb6LbNP9kTng0eaeOk] Origin:[http://localhost:4200] Referer:[http://localhost:4200/home] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc00014a180 <nil> 48 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:53054 /login <nil> <nil> <nil> 0xc00014a1c0}
+2019/10/13 20:32:47.544 [I] [tools.go:126]  &{0xc000108020 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 20:32:47.547 [I] [handleFunc.go:18]  map[data:map[password:777 username:3333333]]
+2019/10/13 20:32:47.585 [I] [handleFunc.go:35]  false
+2019/10/13 20:32:47.612 [I] [tools.go:64]  {0}
+2019/10/13 20:32:47.613 [I] [tools.go:65]  {0 账号或密码不正确 {0} /login POST 0 0}
+2019/10/13 20:35:04.363 [I] [initDB.go:38]  DB connected!
+2019/10/13 20:35:08.963 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[48] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEyMjY3NTUsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjY2NjY2NiIsImFkbWluIjpmYWxzZX0._XeDC91pryq0n3-S4vqu1pjeHnb6LbNP9kTng0eaeOk] Origin:[http://localhost:4200] Referer:[http://localhost:4200/home] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc00012c180 <nil> 48 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:53158 /login <nil> <nil> <nil> 0xc00012c1c0}
+2019/10/13 20:35:08.970 [I] [tools.go:126]  &{0xc0000f0020 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/13 20:35:08.971 [I] [handleFunc.go:18]  map[data:map[password:777 username:3333333]]
+2019/10/13 20:35:09.000 [I] [handleFunc.go:35]  false
+2019/10/13 20:35:09.019 [I] [tools.go:64]  0
+2019/10/13 20:35:09.020 [I] [tools.go:65]  {0 账号或密码不正确 0 /login POST 0 0}
+2019/10/14 18:08:39.899 [I] [initDB.go:38]  DB connected!
+2019/10/14 18:45:01.249 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[52] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc00013c1c0 <nil> 52 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:62151 /login <nil> <nil> <nil> 0xc00013c200}
+2019/10/14 18:45:01.371 [I] [tools.go:126]  &{0xc0001300a0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/14 18:45:01.377 [I] [handleFunc.go:18]  map[data:map[password:6666666666 username:3333]]
+2019/10/14 18:45:01.837 [I] [handleFunc.go:35]  false
+2019/10/14 18:45:01.840 [I] [tools.go:64]  0
+2019/10/14 18:45:01.843 [I] [tools.go:65]  {0 账号或密码不正确 0 /login POST 0 0}
+2019/10/14 18:49:23.345 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[48] Content-Type:[application/json] Origin:[http://localhost:4200] Referer:[http://localhost:4200/login] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000341c0 <nil> 48 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:62512 /login <nil> <nil> <nil> 0xc000034200}
+2019/10/14 18:49:23.603 [I] [tools.go:126]  &{0xc000004600 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/14 18:49:23.606 [I] [handleFunc.go:18]  map[data:map[password:222222 username:1111]]
+2019/10/14 18:49:23.678 [I] [handleFunc.go:35]  false
+2019/10/14 18:49:23.679 [I] [tools.go:64]  0
+2019/10/14 18:49:23.681 [I] [tools.go:65]  {0 账号或密码不正确 0 /login POST 0 0}
+2019/10/14 18:52:03.553 [I] [initDB.go:38]  DB connected!
+2019/10/14 19:00:04.462 [I] [tools.go:64]  
+2019/10/14 19:00:04.463 [I] [tools.go:65]  {0 注销成功  /logout GET 0 0}
+2019/10/14 19:00:10.636 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[51] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMTAwMDQsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IuazqOmUgOi0puWPtyIsImFkbWluIjpmYWxzZX0.4Tx9ncKBEcYEqKs16hVx-huny_CPrhggFTYiX1xBHec] Origin:[http://localhost:4200] Referer:[http://localhost:4200/login] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc0000507c0 <nil> 51 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:63179 /login <nil> <nil> <nil> 0xc000050800}
+2019/10/14 19:00:10.640 [I] [tools.go:126]  &{0xc00004d620 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/14 19:00:10.697 [I] [handleFunc.go:18]  map[data:map[password:444444444 username:3333]]
+2019/10/14 19:00:10.699 [E] [t_user.go:74]  write tcp 172.29.236.140:62671->119.23.40.146:5432: wsasend: An existing connection was forcibly closed by the remote host.
+2019/10/14 19:00:10.703 [E] [t_user.go:47]  write tcp 172.29.236.140:62671->119.23.40.146:5432: wsasend: An existing connection was forcibly closed by the remote host.
+2019/10/14 19:00:10.704 [I] [handleFunc.go:35]  false
+2019/10/14 19:00:10.706 [I] [tools.go:64]  0
+2019/10/14 19:00:10.741 [I] [tools.go:65]  {0 账号或密码不正确 0 /login POST 0 0}
+2019/10/14 19:00:11.899 [I] [tools.go:64]  
+2019/10/14 19:00:11.900 [I] [tools.go:65]  {0 注销成功  /logout GET 0 0}
+2019/10/14 19:52:55.021 [I] [tools.go:125]  &{POST /register HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[109] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMTAwMTEsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IuazqOmUgOi0puWPtyIsImFkbWluIjpmYWxzZX0.uksdtlJ_kX3VOnka5NuwZEQa8ihWYS_YRgCk5NOd-b0] Origin:[http://localhost:4200] Referer:[http://localhost:4200/register] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000050980 <nil> 109 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50903 /register <nil> <nil> <nil> 0xc0000509c0}
+2019/10/14 19:52:55.077 [I] [tools.go:126]  &{0xc00004d9c0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/14 19:52:55.078 [I] [handleFunc.go:73]  map[data:map[comment:ddddddddd confirm:ddd email:22@11.com password:ddd userName:3333333333]]
+2019/10/14 19:52:55.120 [W] [handleFunc.go:84]  读取表单参数错误
+2019/10/14 20:01:58.810 [I] [tools.go:125]  &{POST /register HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[123] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMTAwMTEsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IuazqOmUgOi0puWPtyIsImFkbWluIjpmYWxzZX0.uksdtlJ_kX3VOnka5NuwZEQa8ihWYS_YRgCk5NOd-b0] Origin:[http://localhost:4200] Referer:[http://localhost:4200/register] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000050b40 <nil> 123 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:51322 /register <nil> <nil> <nil> 0xc000050b80}
+2019/10/14 20:01:58.813 [I] [tools.go:126]  &{0xc00004dc60 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/14 20:01:58.816 [I] [handleFunc.go:73]  map[data:map[comment:11111111111111111111 confirm:1111 email:33333333@qq.com password:1111 username:22222]]
+2019/10/14 20:01:58.967 [I] [tools.go:64]  {true}
+2019/10/14 20:01:58.968 [I] [tools.go:65]  {0 注册成功 {true} /register POST 0 0}
+2019/10/14 20:04:41.994 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[47] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMTAwMTEsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IuazqOmUgOi0puWPtyIsImFkbWluIjpmYWxzZX0.uksdtlJ_kX3VOnka5NuwZEQa8ihWYS_YRgCk5NOd-b0] Origin:[http://localhost:4200] Referer:[http://localhost:4200/login] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000140280 <nil> 47 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:51489 /login <nil> <nil> <nil> 0xc0001402c0}
+2019/10/14 20:04:42.031 [I] [tools.go:126]  &{0xc0001327e0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/14 20:04:42.074 [I] [handleFunc.go:18]  map[data:map[password:1111 username:22222]]
+2019/10/14 20:04:42.180 [E] [t_user.go:57]  pq: got 1 parameters but the statement requires 2
+2019/10/14 20:04:42.181 [I] [handleFunc.go:35]  true
+2019/10/14 20:04:42.222 [I] [handleFunc.go:58]  token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMTM4ODIsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjIyMjIyIiwiYWRtaW4iOmZhbHNlfQ.eJph5KGuvlE4tRYrQX-ldwZ6BN-IxF3HQ6SLR_io07M; HttpOnly
+2019/10/14 20:04:42.249 [I] [tools.go:64]  1
+2019/10/14 20:04:42.250 [I] [tools.go:65]  {0 登录成功 1 /login POST 0 0}
+2019/10/14 20:06:36.957 [I] [initDB.go:38]  DB connected!
+2019/10/14 20:06:58.358 [I] [tools.go:64]  
+2019/10/14 20:06:58.361 [I] [tools.go:65]  {0 注销成功  /logout GET 0 0}
+2019/10/14 20:07:06.364 [I] [tools.go:125]  &{POST /login HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[47] Content-Type:[application/json] Cookie:[token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMTQwMTgsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IuazqOmUgOi0puWPtyIsImFkbWluIjpmYWxzZX0.ErG9zfGHM4-ZKm7AAm_bo6mNLsdOOax-4S7bXg_AAqE] Origin:[http://localhost:4200] Referer:[http://localhost:4200/login] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36]] 0xc000050840 <nil> 47 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:51629 /login <nil> <nil> <nil> 0xc000050880}
+2019/10/14 20:07:06.368 [I] [tools.go:126]  &{0xc00004f9e0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/10/14 20:07:06.369 [I] [handleFunc.go:18]  map[data:map[password:1111 username:22222]]
+2019/10/14 20:07:06.416 [I] [handleFunc.go:35]  true
+2019/10/14 20:07:06.462 [I] [handleFunc.go:58]  token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NzEzMTQwMjYsImlzcyI6InNnc3QiLCJ1c2VybmFtZSI6IjIyMjIyIiwiYWRtaW4iOmZhbHNlfQ.KZesio53t_QNgx52BMUtKC6IwkV1TWeGU4MJYhPimUE; HttpOnly
+2019/10/14 20:07:06.482 [I] [tools.go:64]  1
+2019/10/14 20:07:06.484 [I] [tools.go:65]  {0 登录成功 1 /login POST 0 0}
+2019/10/14 20:07:14.134 [I] [tools.go:64]  
+2019/10/14 20:07:14.157 [I] [tools.go:65]  {0 注销成功  /logout GET 0 0}

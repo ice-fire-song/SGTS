@@ -1,0 +1,175 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+
+/* 上 */
+.trade-header-m {
+    font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    position: relative;
+    z-index: 10000;
+    background: #fff;
+}
+.trade-header-m .nav-menu {
+    position: relative;
+    color: #222;
+    z-index: 200;
+    height: 193px;
+    background-image:url("http://i0.hdslb.com/bfs/archive/1ee3febf53becf8ca9e84387c4578f1b41c354be.png");
+    background-position: center -10px;
+    background-repeat: no-repeat;
+}
+
+.nav-wrapper {
+    width: 1160px;
+    height: 42px;
+    margin: 0 auto;
+    background-color: red;
+    z-index: 300;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    min-width: 980px;
+}
+.nav-wrapper-left {
+    flex: 1;
+    text-align: center;
+    line-height: 42px;
+}
+.nav-wrapper-right {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.nav-wrapper-right .nav-con {
+    flex: 5;
+    background-color:green;
+}
+.nav-wrapper-right .up-load {
+    flex: 1;
+}
+.nav-wrapper-right .nav-con ul {
+    display: flex;
+}
+.trade-header-m .nav-menu .nav-con ul .nav-item {
+    flex: 1;
+    text-align: center;
+    line-height: 42px;
+    background-color: hsla(0,0%,100%,0);
+    white-space: nowrap;
+}
+.trade-header-m .nav-menu .up-load .u-link {
+    display: block;
+    width: 100%;
+    height: 46px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: #f45a8d;
+    border-radius: 0 0 6px 6px;
+}
+.trade-header-m a, .trade-header-m a:hover, .trade-header-m ins {
+    text-decoration: none;
+}
+.trade-header-m a {
+    transition: color 0s;
+}
+/*中*/
+/* .trade-header-m  .head-content {
+    position: relative;
+    height: 170px;
+} */
+.trade-header-m .trade-wrapper {
+    position: relative;
+    top: -193px;
+    margin: 0 auto;
+    height: 170px;
+    width: 1160px;
+    z-index: 300;
+}
+.search {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 268px;
+    height: 32px;
+    padding: 2px 2px 2px 2px;
+    background-color: #e5e9ef;
+    background-color: rgba(0,0,0,.12);
+    border-radius: 6px;
+    font-size: 12px;
+    z-index: 300;
+}
+.trade-header-m .search .searchform {
+    background-color:#fff;
+    background-color: hsla(0,0%,100%,.88);
+    display: block;
+    height: 32px;
+    border-radius: 4px;
+    transition: background-color .2s;
+}
+.trade-header-m .search .search-keyword {
+    float: left;
+    width: 100%;
+    color: #222;
+    font-size: 12px;
+    overflow: hidden;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    border: 0;
+    box-shadow: none;
+    background-color: transparent;
+}
+.trade-header-m .search button.search-submit {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 48px;
+    min-width: 0;
+    cursor: pointer;
+    height: 32px;
+    background: url(http://static.hdslb.com/images/base/icons.png) -653px -720px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/*下*/
+.goods-class {
+    position: relative;
+    top: -193px;
+    margin: 0 auto;
+    width: 1160px;
+    z-index: 300;
+}
+.goods-nav-menu {
+    position: relative;
+    z-index: 200;
+    width: 80%;
+    height: 42px;
+    color: #222;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+}
+li {
+    flex: 1;
+    line-height: 42px;
+    text-align: center;
+}
+.nav-gif {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    padding: 4px 0;
+}
+
+/* 货品列表 */
+.goods-box {
+    width: 200px;
+    height: 280px;
+}
