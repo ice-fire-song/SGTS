@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html body {
+    width: 100%;
+    height: 100%;
+}
+.content {
+    width: 80%;
+    height: 800px;
+    margin: auto auto;
+    padding: 10px 20px 10px 20px;
+    border: 0.1px solid #a59d9d;
+    display: flex;
+    flex-direction: row;
+    
+}
+.content .left {
+    flex: 1;
+    border: 0.1px solid #a59d9d;
+}
+.content .right {
+    flex: 4;
+    margin-left: 8px;
+    border: 0.1px solid #a59d9d;
+}
+/* 左边收藏夹导航栏 */
+.left-title {
+    width: 100%;
+    height: 40px;
+    border-bottom: 0.1px solid #a59d9d;
+    line-height: 40px;
+    text-align: center;
+}
+.content ul {
+    width: 100%;
+}
+ .favour-nav-item {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    border-bottom: 0.1px solid rgb(199, 191, 191);
+ }
+ .left-icon {
+     flex: 1;
+     text-align: center;
+ }
+ .left-icon img {
+     height: 100%;
+     width: auto;
+ }
+ .right-text {
+     flex: 1;
+ }
+
+ /* 右边收藏展示栏 */
+ /* 上部 */
+ .favour-selected {
+     width: 100%;
+     height: 40px;
+     border: 0.1px solid #a59d9d;
+     border-radius: 5px;
+     line-height: 40px;
+ }
+ .name {
+    float: left;
+    margin-left: 5px;
+ }
+ .search-box {
+    float: right;
+    height: 100%;
+    margin-right: 50px;
+ }
+ #key {
+     width: 160px;
+     height: 28px;
+     border-radius: 5px;
+ }
+ .search-btn {
+     height: 28px;
+     width: 70px;
+     background-color: #169BD5;
+     border-radius: 5px;
+ }
+ /* 下部 */
+ .goods {
+     width: 100%;
+     height: 680px;
+     font-size: 15px;
+     border: 0.1px solid #a59d9d;
+     font-family: 'Courier New', Courier, monospace;
+
+ }
+ .good-item {
+
+    width: 32%;
+    float: left;
+    margin-top:10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 0.1px solid #a59d9d;
+    border-radius: 3px 3px 0 0;
+}
+.good-item .img-box {
+    width: 100%;
+    height: 160px;
+    border-radius: 3px 3px 0 0;
+}
+.good-item .img-box img {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 3px 3px 0 0;
+    vertical-align: middle;
+    border-style: none;
+}

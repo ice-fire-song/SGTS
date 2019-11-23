@@ -17,7 +17,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { FavourComponent } from './components/favour/favour.component';
-import { GoodsManageComponent } from './components/goods-manage/goods-manage.component'
+import { GoodsManageComponent } from './components/goods-manage/goods-manage.component';
+import { GoodDetailComponent } from './components/good-detail/good-detail.component'
 registerLocaleData(en);
 
 @NgModule({
@@ -29,7 +30,8 @@ registerLocaleData(en);
     ForgotPasswordComponent,
     ChatComponent,
     FavourComponent,
-    GoodsManageComponent
+    GoodsManageComponent,
+    GoodDetailComponent
 
   ],
   imports: [
