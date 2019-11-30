@@ -3,8 +3,8 @@
        <div class="trade-header-m">
            <!-- 上 -->
           <div class="nav-menu">
-            <!-- <div class="blur-bg" style="background-image:url(http://i0.hdslb.com/bfs/archive/1ee3febf53becf8ca9e84387c4578f1b41c354be.png);"></div>
-            <div class="nav-mask"></div> -->
+            <div class="blur-bg" style="background-image:url(/assets/images/home-bg.png);"></div>
+            <div class="nav-mask"></div>
 
             <div class="nav-wrapper">
                 <div class="nav-wrapper-left">
@@ -24,7 +24,7 @@
                         </ul>
                     </div>
                     <div report-id="playpage_contribution" class="up-load">
-                            <a href="//member.bilibili.com/v2#/upload/video/frame" target="_blank" class="u-link"> 投稿 </a>
+                            <a href="//member.bilibili.com/v2#/upload/video/frame" target="_blank" class="u-link"> 上传 </a>
                             <!---->
                     </div>
                 </div>
@@ -35,7 +35,7 @@
           <div class="trade-wrapper">
             <div class="search"> 
                 <form class="searchform">
-                    <input type="text" autocomplete="off" accesskey="s" x-webkit-speech="" x-webkit-grammar="builtin:translate" placeholder="瓜皮的id酱在此！" value="" class="search-keyword">
+                    <input type="text" autocomplete="off" accesskey="s" x-webkit-speech="" x-webkit-grammar="builtin:translate" placeholder="请输入关键词" value="" class="search-keyword">
                     <button type="submit" class="search-submit"></button>
                 </form>
             </div>
@@ -47,41 +47,85 @@
                <ul class="goods-nav-menu">
                     <li class="home">
                         <a href="//www.bilibili.com"><!---->
-                            <div class="nav-name">首页</div>
+                            <div class="nav-name">全部</div>
                         </a>
                     </li>
-                   <li><div class="nav-name">图书</div></li>
+                   <li *ngFor="let item of classList" ><div class="nav-name" (click)="switchClass(item.gt_id)">{{item.type_name}}</div></li>
+                   <!-- <li><div class="nav-name">图书</div></li>
                    <li><div class="nav-name">文具</div></li>
                    <li><div class="nav-name">生活用品</div></li>
                    <li><div class="nav-name">电子产品</div></li>
                    <li><div class="nav-name">化妆用品</div></li>
                    <li><div class="nav-name">服装鞋包</div></li>
-                   <li><div class="nav-name">其它</div></li>
+                   <li><div class="nav-name">其它</div></li> -->
+                  
                </ul>
 
-               <div class="gif-menu nav-gif">
+               <!-- <div class="gif-menu nav-gif">
                     <a href="https://www.bilibili.com/blackboard/bml/2019/guangzhou.html" target="_blank" title="BML广州场追加情报公布！" class="random-p"><img src="http://i0.hdslb.com/bfs/archive/12979ac68e91c53ca8549a72593dd3a90b19bc94.gif" alt="" /></a>
-                </div>
+                </div> -->
             </div>
             
             <div class="goods-list">
-                <div class="goods-box">
-                    <img src="http://img.alicdn.com/tfscom/i3/2996558363/TB2a.PkdcIrBKNjSZK9XXagoVXa_!!2996558363.jpg_180x180xzq90.jpg_.webp" class="image" />
-                    <div class="row">
-                        <p class="goods-name"></p>
+                <div class="big-title">
+                    <p>图书</p>
+                </div>
+                <!-- 免费商品区 -->
+                <div class="free-goods-box">
+                    <div class="area-title">
+                        <p>免费商品</p>
                     </div>
-                    <div class="row">
-                        <p class="goods-detail"></p>
-                    </div>
-                    <div class="row">
-                        <div class="holder-box">
-                            <div></div>
-                        </div>
-                        <div class="price-box">
-                            <div class="price"></div>
+                    <div class="goods">
+                        <div class="good-item" *ngFor="let item of freeGoodsList">
+                            <div class="img-box">
+                                <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                            </div>
+                            <p>{{item.gname}}</p>
+                            <div>
+                                <div>{{item.username}}</div>
+                                <div>{{item.release_time}}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+     
+                <!-- 商品区 -->
+                <div class="goods-box">
+                    <div class="area-title">
+                        <p>商品</p>
+                    </div>
+                    <div class="goods">
+                        <div class="good-item" *ngFor="let item of GoodsList">
+                            <div class="img-box">
+                                <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                            </div>
+                            <p>{{item.gname}}</p>
+                            <div>
+                                <div>{{item.username}}</div>
+                                <div>{{item.release_time}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 需求区 -->
+                <div class="request-box">
+                    <div class="area-title">
+                        <p>需求</p>
+                    </div>
+                    <div class="goods">
+                        <div class="good-item" *ngFor="let item of requestsList">
+                            <div class="img-box">
+                                <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                            </div>
+                            <p>{{item.gname}}</p>
+                            <div>
+                                <div>{{item.username}}</div>
+                                <div>{{item.release_time}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="pagebox"></div>
           </div>

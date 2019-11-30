@@ -22,15 +22,15 @@ func GetAllPrivateLetter(uid int) (plList *[]PrivateLetter, err error){
 	defer rows.Close()
 	plList = new([]PrivateLetter)
 	for rows.Next() {
-		var plid int
-		var user_id int
-		var friend_id int
-		var sender_id int
-		var receiver_id int
-		var massage_type int
+		var plid int64
+		var user_id int64
+		var friend_id int64
+		var sender_id int64
+		var receiver_id int64
+		var massage_type int64
 		var massage_content sql.NullString
 		var send_time time.Time
-		var status int
+		var status int64
 		err = rows.Scan(&plid,&user_id,&friend_id,&sender_id,&receiver_id,&massage_type,&massage_content,&send_time,&status)
 		if err != nil {
 			logs.Error(err)

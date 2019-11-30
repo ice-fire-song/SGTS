@@ -1,10 +1,14 @@
 drop table public.t_favour;
 
+drop table t_favour_dir;
+
 drop table public.t_goods;
 
 drop table public.t_goods_img;
 
 drop table public.t_goods_label;
+
+drop table public.t_goods_type;
 
 drop table public.t_private_letter;
 
@@ -19,8 +23,8 @@ drop table public.t_user;
 create table public.t_favour (
    fid                  SERIAL not null,
    gid                  int4                 not null,
+   fd_id                int4                 null,
    uid                  int4                 not null,
-   fdid                 int4                 not null,
    create_time          TIMESTAMP WITH TIME ZONE null default CURRENT_TIMESTAMP,
    constraint PK_T_FAVOUR primary key (fid)
 );
@@ -38,54 +42,30 @@ comment on column t_favour.create_time is
 '收藏时间';
 
 /*==============================================================*/
-/* Table: t_favour_dir                                      */
+/* Table: t_favour_dir                                          */
 /*==============================================================*/
 create table t_favour_dir (
-   fdid                   SERIAL not null,
-   foldername            VARCHAR(255)         not null,
-   create_time          TIMESTAMP WITH TIME ZONE not null default CURRENT_TIMESTAMP,
-   uid                  INT4          not null,
-   sketch               VARCHAR(500)         null default NULL,
-   authority_level              INT4                 not null default 2,
-   constraint PK_T_RESOURCE_CLASS primary key (fdid),
+   fd_id                serial               not null,
+   foldername           varchar(200)         not null,
+   uid                  int4                 not null,
+   sketch               varchar(200)                null,
+   authority_level      int4                 not null   default '1',
+   create_time          TIMESTAMP WITH TIME ZONE null default CURRENT_TIMESTAMP,
+   constraint PK_T_FAVOUR_DIR primary key (fd_id)
 );
 
-comment on table t_favour_dir is
-'收藏夹表';
-
-comment on column t_favour_dir.id is
-'收藏夹id（自增，主码）';
-
-comment on column t_favour_dir.foldername is
-'收藏夹名称';
-
-comment on column t_favour_dir.create_time is
-'创建该收藏夹时间';
-
-comment on column t_favour_dir.uid is
-'创建人id';
-
-comment on column t_favour_dir.sketch is
-'文件夹描述';
-
-comment on column t_favour_dir.authority_level is
-'其他页面是否需要该类别（默认1，是不需要，可删除；2是需要，不可删除）';
-
--- 资源类别 t_resource_class 初始化数据
-
-insert into t_resource_class (name,parent,creator,be_used,level) VALUES('数据中心资源',0,000,2,1);  --1
 /*==============================================================*/
 /* Table: t_goods                                               */
 /*==============================================================*/
 create table public.t_goods (
    gid                  SERIAL not null,
-   uid                  int4                 null,
+   uid                  int4                 not null,
    gname                varchar(200)         not null,
    gprice               float                null,
    gdetail              text                 null,
    category_id          int4                 null,
-   click_number         int4                 null,
-   status               smallint             null,
+   click_number         int4                 not null default '0',
+   status               smallint             not null default '1',
    mobilephone_number   varchar(15)          null,
    gliaison             varchar(50)          null,
    openid               varchar(20)          null,
@@ -113,7 +93,7 @@ comment on column t_goods.gdetail is
 '货品详情';
 
 comment on column t_goods.category_id is
-'类别id';
+'类别id, 1 商品、2 免费商品、3 需求';
 
 comment on column t_goods.click_number is
 '点击量';
@@ -141,10 +121,10 @@ comment on column t_goods.release_time is
 /*==============================================================*/
 create table public.t_goods_img (
    id                   SERIAL not null,
-   gid                  int4                 null,
+   gid                  int4                 not null,
    image_name           varchar(100)         null,
    image_ext            varchar(10)          null,
-   save_path            varchar(255)         null,
+   save_path            varchar(255)         not null,
    image_size           float                null,
    release_time         TIMESTAMP WITH TIME ZONE null default CURRENT_TIMESTAMP,
    constraint PK_T_GOODS_IMG primary key (id)
@@ -192,7 +172,27 @@ comment on column t_goods_label.label_name is
 
 comment on column t_goods_label.create_time is
 '创建时间';
+/*==============================================================*/
+/* Table: t_goods_type                                        */
+/*==============================================================*/
+create table public.t_goods_type (
+   gt_id                  serial                not null,
+   type_name              varchar(150)         not null,
+   create_time            TIMESTAMP WITH TIME ZONE null default CURRENT_TIMESTAMP,
+   constraint PK_T_GOODS_TYPE primary key (gt_id, type_name)
+);
 
+comment on table public.t_goods_type is
+'货品种类表';
+
+comment on column t_goods_type.gt_id is
+'货品种类id';
+
+comment on column t_goods_type.type_name is
+'货品种类';
+
+comment on column t_goods_type.create_time is
+'创建时间';
 /*==============================================================*/
 /* Table: t_private_letter                                      */
 /*==============================================================*/
@@ -205,7 +205,7 @@ create table public.t_private_letter (
    massage_type         smallint             null,
    message_content      text                 null,
    send_time            TIMESTAMP WITH TIME ZONE null default CURRENT_TIMESTAMP,
-   status               smallint             null,
+   status               smallint             not null default '1',
    constraint PK_T_PRIVATE_LETTER primary key (plid)
 );
 
@@ -247,10 +247,10 @@ create table public.t_user (
    username             varchar(100)         not null,
    password             varchar(50)          not null,
    user_role            smallint             not null,
-   head_sculpture_path  varchar(255)         null,
+   head_sculpture_path  varchar(255)         not null default '/',
    label                text                 null,
    create_time          TIMESTAMP WITH TIME ZONE null default CURRENT_TIMESTAMP,
-   status               smallint             null,
+   status               smallint             not null default '0',
    constraint PK_T_USER primary key (uid)
 );
 
@@ -284,6 +284,11 @@ comment on column t_user.status is
 alter table t_favour
    add constraint FK_T_FAVOUR_REFERENCE_T_GOODS foreign key (gid)
       references t_goods (gid)
+      on delete restrict on update restrict;
+
+alter table t_favour
+   add constraint FK_T_FAVOUR_REFERENCE_T_FAVOUR foreign key (fd_id)
+      references t_favour_dir (fd_id)
       on delete restrict on update restrict;
 
 alter table t_goods

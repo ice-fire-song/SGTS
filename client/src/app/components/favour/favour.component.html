@@ -8,40 +8,49 @@
                 <ul>
                     <li class="favour-nav-item">
                         <div class="left-icon">
-                            <img src="./新建.png">
+                            <img src="/assets/images/新建.png">
                         </div>
                         <p class="right-text">
                             新建收藏夹
                         </p>
                     </li>
-                    <li class="favour-nav-item">
+                    <!-- <li class="favour-nav-item">
                         <div class="left-icon">
-                            <img src="./收藏夹.png">
+                            <img src="/assets/images/收藏夹.png">
                         </div>
                         <p class="right-text">
                             默认收藏夹
                         </p>
-                    </li>
-                    <li class="favour-nav-item">
+                    </li> -->
+                    <li class="favour-nav-item" *ngFor="let item of dirList" (click)="switch(item.fdid,item.foldername)">
                         <div class="left-icon">
-                            <img src="./收藏夹.png">
+                            <img src="/assets/images/收藏夹.png">
                         </div>
                         <p class="right-text">
-                            生活用品
+                            {{item.foldername}}
                         </p>
                     </li>
                 </ul>
             </div>
             <div class="right">
                 <div class="favour-selected">
-                    <p class="name">默认收藏夹</p>
+                    <p class="name">{{foldername}}</p>
                     <div class="search-box">
-                        <input id="key" type="text" placeholder="请输入关键词">
+                        <input id="key" type="text" [(ngModel)]="inputValue" placeholder="请输入关键词">
                         <button class="search-btn" (click)="search()">搜索</button>
                     </div>
                 </div>
                 <div class="goods">
-                   <div class="good-item">
+                   <div class="good-item" *ngFor="let item of goodList">
+                        <div class="img-box">
+                            <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                        </div>
+                        <p>{{item.gname}}</p>
+                        <div>
+                            收藏于：{{cutTime(item.create_time)}}
+                        </div>
+                   </div>
+                   <!-- <div class="good-item">
                         <div class="img-box">
                             <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
                         </div>
@@ -103,16 +112,7 @@
                         <div>
                             收藏于：10月20日
                         </div>
-                   </div>
-                   <div class="good-item">
-                        <div class="img-box">
-                            <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
-                        </div>
-                        <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
-                        <div>
-                            收藏于：10月20日
-                        </div>
-                   </div>
+                   </div> -->
                 </div>
                 <div class="footer-box" style="height: 60px; width:100%; margin-top: 20px; background-color: pink;">
 

@@ -9,7 +9,7 @@ import { GoodsManageComponent } from './components/goods-manage/goods-manage.com
 
 
 const routes: Routes = [
-  { path: '', redirectTo: "favour", pathMatch: 'full' },
+  { path: '', redirectTo: "home", pathMatch: 'full' },
   { path: "login", component: LoginComponent },
   { path: "home", component: HomeComponent },
   { path: "register", component: RegisterComponent },

@@ -26,7 +26,7 @@
     width: 1160px;
     height: 42px;
     margin: 0 auto;
-    background-color: red;
+    background-color:rgb(245, 208, 214);
     z-index: 300;
     display: flex;
     justify-content: space-between;
@@ -45,7 +45,7 @@
 }
 .nav-wrapper-right .nav-con {
     flex: 5;
-    background-color:green;
+    background-color:rgb(245, 208, 214);
 }
 .nav-wrapper-right .up-load {
     flex: 1;
@@ -142,16 +142,18 @@
     position: relative;
     top: -193px;
     margin: 0 auto;
-    width: 1160px;
+    border: 1px solid grey;
+    width: 70%;
+    min-height: 900px;
     z-index: 300;
 }
 .goods-nav-menu {
     position: relative;
     z-index: 200;
-    width: 80%;
+    width: 100%;
     height: 42px;
     color: #222;
-    background-color: red;
+    background-color:rgb(245, 208, 214);
     display: flex;
     flex-direction: row;
 }
@@ -167,9 +169,63 @@ li {
     height: 50px;
     padding: 4px 0;
 }
-
+/* 检索的结果 */
+.goods-list {
+    width: 100%;
+}
+.big-title {
+    width: 100%;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.free-goods-box, .goods-box,.request-box {
+    width: 100%;
+    min-height: 440px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-bottom: 10px;
+}
+.area-title {
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+}
 /* 货品列表 */
-.goods-box {
-    width: 200px;
-    height: 280px;
+
+
+/* 检索出的货品 */
+.goods {
+    width: 100%;
+    font-size: 15px;
+    border: 0.1px solid #a59d9d;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: pink;
+
+}
+.good-item {
+
+   width: 32%;
+   float: left;
+   margin-top:10px;
+   margin-left: 5px;
+   margin-right: 5px;
+   border: 0.1px solid #a59d9d;
+   border-radius: 3px 3px 0 0;
+   background-color: red;
+}
+.good-item .img-box {
+   width: 100%;
+   height: 160px;
+   border-radius: 3px 3px 0 0;
+}
+.good-item .img-box img {
+
+   width: 100%;
+   height: 100%;
+   border-radius: 3px 3px 0 0;
+   vertical-align: middle;
+   border-style: none;
 }

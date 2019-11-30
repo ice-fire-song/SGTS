@@ -159,5 +159,4 @@ func GetPrivateLetter(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// 根据uid获取与其相关的所有私信
-
 }
