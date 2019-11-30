@@ -206,3 +206,147 @@
 2019/11/30 11:04:03.663 [I] [t_favour_dir.go:66]  ok
 2019/11/30 11:04:03.684 [I] [t_favour_dir.go:92]  &[]
 2019/11/30 11:04:03.684 [I] [main.go:15]  &[]
+2019/11/30 11:11:49.732 [I] [initDB.go:38]  DB connected!
+2019/11/30 11:11:49.732 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:11:49.750 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:11:49.750 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST}]
+2019/11/30 11:11:49.750 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:11:49.750 [I] [t_favour_dir.go:93]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:11:49.750 [I] [main.go:15]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:05.823 [I] [tools.go:125]  &{POST /getFolder HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[33] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc000034900 <nil> 33 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:65273 /getFolder <nil> <nil> <nil> 0xc000034940}
+2019/11/30 11:12:05.824 [I] [tools.go:126]  &{0xc000005c80 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:12:05.824 [I] [favourHandleFunc.go:86]  map[action:GET data:map[uid:1]]
+2019/11/30 11:12:05.824 [I] [favourHandleFunc.go:93]  map[uid:1]
+2019/11/30 11:12:05.863 [I] [favourHandleFunc.go:104]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:12:05.863 [I] [tools.go:64]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:12:05.863 [I] [tools.go:65]  {0 收藏列表获取成功 0xc00014e000 /getFolder POST 0 0}
+2019/11/30 11:12:05.898 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[51] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc000034b80 <nil> 51 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:65274 /getFavourGoods <nil> <nil> <nil> 0xc000034bc0}
+2019/11/30 11:12:05.899 [I] [tools.go:126]  &{0xc000005f20 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:12:05.899 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:2 key: uid:1]]
+2019/11/30 11:12:05.899 [I] [favourHandleFunc.go:131]  map[fdid:2 key: uid:1]
+2019/11/30 11:12:05.900 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:12:05.934 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:12:05.935 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST}]
+2019/11/30 11:12:05.935 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:05.935 [I] [t_favour_dir.go:93]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:05.935 [I] [favourHandleFunc.go:142]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:05.936 [I] [tools.go:64]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:05.936 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc00018a140 /getFavourGoods POST 0 0}
+2019/11/30 11:12:16.468 [I] [tools.go:125]  &{POST /getFolder HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[33] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc0001a6140 <nil> 33 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:65297 /getFolder <nil> <nil> <nil> 0xc0001a6180}
+2019/11/30 11:12:16.469 [I] [tools.go:126]  &{0xc0000f0040 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:12:16.469 [I] [favourHandleFunc.go:86]  map[action:GET data:map[uid:1]]
+2019/11/30 11:12:16.469 [I] [favourHandleFunc.go:93]  map[uid:1]
+2019/11/30 11:12:16.491 [I] [favourHandleFunc.go:104]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:12:16.493 [I] [tools.go:64]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:12:16.493 [I] [tools.go:65]  {0 收藏列表获取成功 0xc00018a5e0 /getFolder POST 0 0}
+2019/11/30 11:12:16.749 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[51] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc0001a6400 <nil> 51 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:65298 /getFavourGoods <nil> <nil> <nil> 0xc0001a6440}
+2019/11/30 11:12:16.844 [I] [tools.go:126]  &{0xc0000f02e0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:12:16.846 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:2 key: uid:1]]
+2019/11/30 11:12:16.846 [I] [favourHandleFunc.go:131]  map[fdid:2 key: uid:1]
+2019/11/30 11:12:16.846 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:12:16.872 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:12:16.872 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST}]
+2019/11/30 11:12:16.872 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:16.872 [I] [t_favour_dir.go:93]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:16.872 [I] [favourHandleFunc.go:142]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:16.872 [I] [tools.go:64]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:12:16.873 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc00018a7a0 /getFavourGoods POST 0 0}
+2019/11/30 11:19:08.353 [I] [tools.go:125]  &{POST /getFolder HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[33] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc0001a6680 <nil> 33 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:49387 /getFolder <nil> <nil> <nil> 0xc0001a66c0}
+2019/11/30 11:19:08.354 [I] [tools.go:126]  &{0xc0000f0520 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:19:08.354 [I] [favourHandleFunc.go:86]  map[action:GET data:map[uid:1]]
+2019/11/30 11:19:08.354 [I] [favourHandleFunc.go:93]  map[uid:1]
+2019/11/30 11:19:08.375 [I] [favourHandleFunc.go:104]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:19:08.376 [I] [tools.go:64]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:19:08.376 [I] [tools.go:65]  {0 收藏列表获取成功 0xc0000f07a0 /getFolder POST 0 0}
+2019/11/30 11:19:08.487 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[51] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc000154140 <nil> 51 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:49388 /getFavourGoods <nil> <nil> <nil> 0xc000154180}
+2019/11/30 11:19:08.487 [I] [tools.go:126]  &{0xc00014e380 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:19:08.487 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:2 key: uid:1]]
+2019/11/30 11:19:08.487 [I] [favourHandleFunc.go:131]  map[fdid:2 key: uid:1]
+2019/11/30 11:19:08.487 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:19:08.979 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:19:08.979 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST}]
+2019/11/30 11:19:08.979 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:19:08.979 [I] [t_favour_dir.go:93]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:19:08.979 [I] [favourHandleFunc.go:142]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:19:08.979 [I] [tools.go:64]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:19:08.979 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc00014e5a0 /getFavourGoods POST 0 0}
+2019/11/30 11:39:12.730 [I] [tools.go:125]  &{POST /getFolder HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[33] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc000154340 <nil> 33 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50749 /getFolder <nil> <nil> <nil> 0xc000154380}
+2019/11/30 11:39:12.737 [I] [tools.go:126]  &{0xc00014e940 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:39:12.739 [I] [favourHandleFunc.go:86]  map[action:GET data:map[uid:1]]
+2019/11/30 11:39:12.739 [I] [favourHandleFunc.go:93]  map[uid:1]
+2019/11/30 11:39:12.770 [I] [favourHandleFunc.go:104]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:39:12.770 [I] [tools.go:64]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:39:12.771 [I] [tools.go:65]  {0 收藏列表获取成功 0xc00014ebc0 /getFolder POST 0 0}
+2019/11/30 11:39:12.783 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[51] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc0001a6900 <nil> 51 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50752 /getFavourGoods <nil> <nil> <nil> 0xc0001a6940}
+2019/11/30 11:39:12.786 [I] [tools.go:126]  &{0xc0000f09a0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:39:12.789 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:2 key: uid:1]]
+2019/11/30 11:39:12.790 [I] [favourHandleFunc.go:131]  map[fdid:2 key: uid:1]
+2019/11/30 11:39:12.791 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:39:12.828 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:39:12.828 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST}]
+2019/11/30 11:39:12.829 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:12.829 [I] [t_favour_dir.go:93]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:12.829 [I] [favourHandleFunc.go:142]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:12.829 [I] [tools.go:64]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:12.829 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc0000f0bc0 /getFavourGoods POST 0 0}
+2019/11/30 11:39:27.915 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[51] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc000154500 <nil> 51 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50759 /getFavourGoods <nil> <nil> <nil> 0xc000154540}
+2019/11/30 11:39:27.915 [I] [tools.go:126]  &{0xc00014eda0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:39:27.916 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:3 key: uid:1]]
+2019/11/30 11:39:27.916 [I] [favourHandleFunc.go:131]  map[fdid:3 key: uid:1]
+2019/11/30 11:39:27.916 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:39:27.935 [I] [t_favour_dir.go:91]  &[{2 免费2018年毛概书籍 2019-11-25 22:54:22.568192 +0800 CST}]
+2019/11/30 11:39:27.935 [I] [t_favour_dir.go:93]  &[{2 免费2018年毛概书籍 2019-11-25 22:54:22.568192 +0800 CST}]
+2019/11/30 11:39:27.935 [I] [favourHandleFunc.go:142]  &[{2 免费2018年毛概书籍 2019-11-25 22:54:22.568192 +0800 CST}]
+2019/11/30 11:39:27.935 [I] [tools.go:64]  &[{2 免费2018年毛概书籍 2019-11-25 22:54:22.568192 +0800 CST}]
+2019/11/30 11:39:27.936 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc00014efc0 /getFavourGoods POST 0 0}
+2019/11/30 11:39:36.347 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[51] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc000154680 <nil> 51 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50765 /getFavourGoods <nil> <nil> <nil> 0xc0001546c0}
+2019/11/30 11:39:36.347 [I] [tools.go:126]  &{0xc00014f140 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:39:36.451 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:2 key: uid:1]]
+2019/11/30 11:39:36.452 [I] [favourHandleFunc.go:131]  map[fdid:2 key: uid:1]
+2019/11/30 11:39:36.452 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:39:36.489 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:39:36.489 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST}]
+2019/11/30 11:39:36.489 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:36.489 [I] [t_favour_dir.go:93]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:36.490 [I] [favourHandleFunc.go:142]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:36.490 [I] [tools.go:64]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:36.490 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc00014f360 /getFavourGoods POST 0 0}
+2019/11/30 11:39:43.537 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[54] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc0001a6b00 <nil> 54 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50770 /getFavourGoods <nil> <nil> <nil> 0xc0001a6b40}
+2019/11/30 11:39:43.537 [I] [tools.go:126]  &{0xc0000f0f80 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:39:43.537 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:2 key:粉 uid:1]]
+2019/11/30 11:39:43.538 [I] [favourHandleFunc.go:131]  map[fdid:2 key:粉 uid:1]
+2019/11/30 11:39:43.538 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:39:43.646 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:39:43.647 [I] [t_favour_dir.go:93]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:39:43.647 [I] [favourHandleFunc.go:142]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:39:43.647 [I] [tools.go:64]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:39:43.647 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc0000f11a0 /getFavourGoods POST 0 0}
+2019/11/30 11:39:51.263 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[52] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc0001a6c80 <nil> 52 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50776 /getFavourGoods <nil> <nil> <nil> 0xc0001a6cc0}
+2019/11/30 11:39:51.263 [I] [tools.go:126]  &{0xc0000f1320 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:39:51.263 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:2 key:U uid:1]]
+2019/11/30 11:39:51.263 [I] [favourHandleFunc.go:131]  map[fdid:2 key:U uid:1]
+2019/11/30 11:39:51.263 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:39:51.282 [I] [t_favour_dir.go:91]  &[{3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:51.282 [I] [t_favour_dir.go:93]  &[{3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:51.282 [I] [favourHandleFunc.go:142]  &[{3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:51.283 [I] [tools.go:64]  &[{3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:39:51.283 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc0000f1540 /getFavourGoods POST 0 0}
+2019/11/30 11:41:00.824 [I] [tools.go:125]  &{POST /getFolder HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[33] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc000154800 <nil> 33 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50807 /getFolder <nil> <nil> <nil> 0xc000154840}
+2019/11/30 11:41:00.917 [I] [tools.go:126]  &{0xc00014f720 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:41:00.917 [I] [favourHandleFunc.go:86]  map[action:GET data:map[uid:1]]
+2019/11/30 11:41:00.917 [I] [favourHandleFunc.go:93]  map[uid:1]
+2019/11/30 11:41:00.953 [I] [favourHandleFunc.go:104]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:41:00.953 [I] [tools.go:64]  &[{2 默认收藏夹 2019-11-25 22:53:14.403078 +0800 CST 1 系统默认创建的收藏夹，不能删除 1} {3 生活用品 2019-11-25 22:53:14.525787 +0800 CST 1 收藏生活用品 1}]
+2019/11/30 11:41:00.953 [I] [tools.go:65]  {0 收藏列表获取成功 0xc00014f9a0 /getFolder POST 0 0}
+2019/11/30 11:41:03.018 [I] [tools.go:125]  &{POST /getFavourGoods HTTP/1.1 1 1 map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[zh-CN,zh;q=0.9] Connection:[close] Content-Length:[51] Content-Type:[application/json] Cookie:[Goland-35dcf7d3=70f2681c-869c-41cc-8dfd-753ed424c6c1] Origin:[http://localhost:4200] Referer:[http://localhost:4200/favour] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-origin] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36]] 0xc0001a6e80 <nil> 51 [] true localhost:9000 map[] map[] <nil> map[] 127.0.0.1:50810 /getFavourGoods <nil> <nil> <nil> 0xc0001a6ec0}
+2019/11/30 11:41:03.054 [I] [tools.go:126]  &{0xc0000f16e0 <nil> <nil> true true {0 0} false false false 0x670550}
+2019/11/30 11:41:03.055 [I] [favourHandleFunc.go:124]  map[action:GET data:map[fdid:2 key: uid:1]]
+2019/11/30 11:41:03.055 [I] [favourHandleFunc.go:131]  map[fdid:2 key: uid:1]
+2019/11/30 11:41:03.055 [I] [t_favour_dir.go:66]  ok
+2019/11/30 11:41:03.183 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST}]
+2019/11/30 11:41:03.238 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST}]
+2019/11/30 11:41:03.239 [I] [t_favour_dir.go:91]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:41:03.239 [I] [t_favour_dir.go:93]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:41:03.239 [I] [favourHandleFunc.go:142]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:41:03.240 [I] [tools.go:64]  &[{1 粉色毛巾 2019-11-30 10:54:32.830327 +0800 CST} {2 免费2018年毛概书籍 2019-11-30 10:54:32.952549 +0800 CST} {3 一本UML书籍 2019-11-30 10:54:33.084983 +0800 CST}]
+2019/11/30 11:41:03.240 [I] [tools.go:65]  {0 获取中的收藏货品成功 0xc00018abc0 /getFavourGoods POST 0 0}
