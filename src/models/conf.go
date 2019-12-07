@@ -42,6 +42,8 @@ type Goods struct {
 	ReleaseTime time.Time `json:"release_time"`
 
 	Username string `json:"username"`
+	TypeName string `json:"type_name"`
+	Category string `json:"category"`
 }
 
 // 货品标签表

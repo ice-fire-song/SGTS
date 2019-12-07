@@ -2,7 +2,6 @@ package models
 
 import (
 	"database/sql"
-	"fmt"
 	"github.com/astaxie/beego/logs"
 	"time"
 )
@@ -35,26 +34,40 @@ func GetGoodsType()(gtList *[]GoodsType, err error){
 }
 
 
-func GetGoodsByType(gt_id int64, category_id int64)(goodsList *[]Goods, err error)  {
-	if gt_id < 1 {
-		err = fmt.Errorf("illegal gid")
-		logs.Error(err)
-		return
-	}
+// 主页
+func GetGoodsByType(gt_id int64, category_id int64, key string)(goodsList *[]Goods, err error)  {
+
 	logs.Info("ok")
 	var rows *sql.Rows
-	if gt_id == 0 {
-		queryStr := "select t_user.username, gid, uid, gname, gprice, gdetail,click_number, status, release_time from t_goods, t_user "  +
-			"where  category_id=$1 and status=$2 and t_goods.uid=t_user.uid;"
-		rows, err = db.Query(queryStr, category_id, 1)
+	key = "%" + key + "%"
+	if gt_id == 0 && category_id == -1 {
+		queryStr := "select t_user.username, gid, t_goods.uid, gname, gprice, gdetail,click_number, t_goods.status, release_time from t_goods, t_user "  +
+			"where  t_goods.status=$1 and t_goods.uid=t_user.uid and gname like $2 order by release_time asc LIMIT 8 ;"
+		rows, err = db.Query(queryStr, 1,key)
 		if err != nil {
 			logs.Error(err)
 			return
 		}
-	}else {
-		queryStr := "select t_user.username, gid, uid, gname, gprice, gdetail,click_number, status, release_time from t_goods, t_user "  +
-			"where gt_id=$1 and  category_id=$2 and status=$3 and t_goods.uid=t_user.uid;"
-		rows, err = db.Query(queryStr, gt_id, category_id, 1)
+	}else if gt_id == 0 {
+		queryStr := "select t_user.username, gid, t_goods.uid, gname, gprice, gdetail,click_number, t_goods.status, release_time from t_goods, t_user "  +
+			"where category_id=$1 and t_goods.status=$2 and t_goods.uid=t_user.uid and gname like $3 order by release_time asc LIMIT 8 ;"
+		rows, err = db.Query(queryStr, category_id, 1, key)
+		if err != nil {
+			logs.Error(err)
+			return
+		}
+	}else if category_id == -1 {
+		queryStr := "select t_user.username, gid, t_goods.uid, gname, gprice, gdetail,click_number, t_goods.status, release_time from t_goods, t_user "  +
+			"where gt_id=$1 and t_goods.status=$2 and t_goods.uid=t_user.uid and gname like $3 order by release_time asc LIMIT 8 ;"
+		rows, err = db.Query(queryStr, gt_id, 1, key)
+		if err != nil {
+			logs.Error(err)
+			return
+		}
+	} else {
+		queryStr := "select t_user.username, gid, uid, gname, gprice, gdetail,click_number, t_goods.status, release_time from t_goods, t_user "  +
+			"where gt_id=$1 and  category_id=$2 and t_goods.status=$3 and t_goods.uid=t_user.uid and gname like $4  order by release_time asc LIMIT 8;"
+		rows, err = db.Query(queryStr, gt_id, category_id, 1, key)
 		if err != nil {
 			logs.Error(err)
 			return

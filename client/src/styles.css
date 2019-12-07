@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.good-name {
+    text-decoration: none;
+
+}
+.good-name:hover {
+    color: #4fc3f7;
+    cursor: pointer;
+}

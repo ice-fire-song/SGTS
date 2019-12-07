@@ -1,37 +1,7 @@
 <div class="background">
     <div class="box">
-       <div class="trade-header-m">
-           <!-- 上 -->
-          <div class="nav-menu">
-            <div class="blur-bg" style="background-image:url(/assets/images/home-bg.png);"></div>
-            <div class="nav-mask"></div>
-
-            <div class="nav-wrapper">
-                <div class="nav-wrapper-left">
-                    <ul class="nav-con-ul">
-                        <li report-id="playpage_main" class="nav-item home"><a href="//www.bilibili.com" title="主站" class="t"><i class="header-iconfont header-icon-bilibili-tv"></i> 主站
-                            <!----></a>
-                            <!----></li>
-                    </ul>
-                </div>
-                <div class="nav-wrapper-right">
-                    <div class="nav-con">
-                        <ul>
-                            <li class="nav-item">个人中心</li>
-                            <li class="nav-item">私信</li>
-                            <li class="nav-item">收藏</li>
-                            <li class="nav-item">发布中心</li>
-                        </ul>
-                    </div>
-                    <div report-id="playpage_contribution" class="up-load">
-                            <a href="//member.bilibili.com/v2#/upload/video/frame" target="_blank" class="u-link"> 上传 </a>
-                            <!---->
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- 中 -->
+       <!-- <div class="trade-header-m">
+   
           <div class="trade-wrapper">
             <div class="search"> 
                 <form class="searchform">
@@ -39,27 +9,34 @@
                     <button type="submit" class="search-submit"></button>
                 </form>
             </div>
+          </div>  -->
+          <div class="header-img">
+              <img src="assets/images/head-img.png" />
           </div>
-
           <!-- 下 -->
           <div class="goods-class">
-            <div class="primary-menu" scrollshow="true">
-               <ul class="goods-nav-menu">
-                    <li class="home">
-                        <a href="//www.bilibili.com"><!---->
-                            <div class="nav-name">全部</div>
-                        </a>
-                    </li>
-                   <li *ngFor="let item of classList" ><div class="nav-name" (click)="switchClass(item.gt_id)">{{item.type_name}}</div></li>
-                   <!-- <li><div class="nav-name">图书</div></li>
-                   <li><div class="nav-name">文具</div></li>
-                   <li><div class="nav-name">生活用品</div></li>
-                   <li><div class="nav-name">电子产品</div></li>
-                   <li><div class="nav-name">化妆用品</div></li>
-                   <li><div class="nav-name">服装鞋包</div></li>
-                   <li><div class="nav-name">其它</div></li> -->
-                  
-               </ul>
+            <div class="type-menu" scrollshow="true">
+                <div class="type-tab">
+                    <ul>
+                        <!-- <li class="home">
+                            <a href="//www.bilibili.com">
+                                <div class="nav-name" (click)="switchType(0)">全部</div>
+                            </a>
+                        </li>  -->
+                        <!-- <li *ngFor="let item of classList" ><div class="nav-name" (click)="switchType(item.gt_id)">{{item.type_name}}</div></li> -->
+                        <li (click)="switchType(0)"><input  type="radio" name="tabs" checked id="all"><label for="all">全部</label></li>
+                        <li *ngFor="let item of classList; let i = index" (click)="switchType(item.gt_id)"><input type="radio" name="tabs" id="{{i}}"><label for="{{i}}">{{item.type_name}}</label></li>
+                        <!-- <li><div class="nav-name">图书</div></li>
+                        <li><div class="nav-name">文具</div></li>
+                        <li><div class="nav-name">生活用品</div></li>
+                        <li><div class="nav-name">电子产品</div></li>
+                        <li><div class="nav-name">化妆用品</div></li>
+                        <li><div class="nav-name">服装鞋包</div></li>
+                        <li><div class="nav-name">其它</div></li> -->
+                        
+                    </ul>
+                </div>
+
 
                <!-- <div class="gif-menu nav-gif">
                     <a href="https://www.bilibili.com/blackboard/bml/2019/guangzhou.html" target="_blank" title="BML广州场追加情报公布！" class="random-p"><img src="http://i0.hdslb.com/bfs/archive/12979ac68e91c53ca8549a72593dd3a90b19bc94.gif" alt="" /></a>
@@ -67,69 +44,140 @@
             </div>
             
             <div class="goods-list">
-                <div class="big-title">
-                    <p>图书</p>
-                </div>
-                <!-- 免费商品区 -->
-                <div class="free-goods-box">
-                    <div class="area-title">
-                        <p>免费商品</p>
-                    </div>
-                    <div class="goods">
-                        <div class="good-item" *ngFor="let item of freeGoodsList">
-                            <div class="img-box">
-                                <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                <div class="content">
+                    <div class="tab-box">
+                        <div class="tab">
+                            <!-- <div id="" class="tab-item">
+                                <p (click)="switchCategory(-1)">全部</p>
                             </div>
-                            <p>{{item.gname}}</p>
-                            <div>
-                                <div>{{item.username}}</div>
-                                <div>{{item.release_time}}</div>
+                            <div class="tab-item">
+                                <p (click)="switchCategory(0)">免费商品</p>
                             </div>
+                            <div class="tab-item">
+                                <p (click)="switchCategory(1)">商品</p>
+                            </div>
+                            <div class="tab-item">
+                                <p (click)="switchCategory(2)">需求</p>
+                            </div>  -->
+                            <ul>
+                                <li (click)="switchCategory(-1)">
+                                    <input type="radio" name="check" id="active1" checked><label for="active1">全部</label>
+                                </li>
+                                <li (click)="switchCategory(0)">
+                                    <input type="radio" name="check" id="active2"><label for="active2">免费商品</label>
+                                 
+                                </li>
+                                <li (click)="switchCategory(1)">
+                                    <input type="radio" name="check" id="active3"><label for="active3">商品</label>
+                                </li>
+                                <li (click)="switchCategory(2)">
+                                    <input type="radio" name="check" id="active4"><label for="active4">需求</label>
+                                </li>
+                            </ul>
+                    
                         </div>
                     </div>
-                </div>
-     
-                <!-- 商品区 -->
-                <div class="goods-box">
-                    <div class="area-title">
-                        <p>商品</p>
-                    </div>
-                    <div class="goods">
-                        <div class="good-item" *ngFor="let item of GoodsList">
-                            <div class="img-box">
-                                <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
-                            </div>
-                            <p>{{item.gname}}</p>
-                            <div>
-                                <div>{{item.username}}</div>
-                                <div>{{item.release_time}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 需求区 -->
-                <div class="request-box">
-                    <div class="area-title">
-                        <p>需求</p>
-                    </div>
-                    <div class="goods">
-                        <div class="good-item" *ngFor="let item of requestsList">
-                            <div class="img-box">
-                                <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
-                            </div>
-                            <p>{{item.gname}}</p>
-                            <div>
-                                <div>{{item.username}}</div>
-                                <div>{{item.release_time}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="good-info">
+                        <div class="favour-selected">
+                            <!-- <div class="search-box">
+                                <input id="key" type="text" [(ngModel)]="inputValue" placeholder="请输入关键词">
+                                <button class="search-btn" (click)="search()">搜索</button>
+                            </div> -->
+                         
+                            
+                            <div class="container">
+                                <div class="parent">
+                                    <input type="text" class="input-search" [(ngModel)]="inputValue" placeholder="请输入关键词">
+                                    <input type="button" name="" id="" class="btn" (click)="search()">
+                                </div>
+                            </div> 
 
+                        </div>
+                        <div class="goods">
+                           <div class="good-item" *ngFor="let item of goodList">                      
+                                <div class="img-box">
+                                    <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                                </div>
+                                <div class="good-content">
+                                    <p><a class="good-name" (click)="toDetail(item)">{{item.gname}}</a></p>
+                                    <p *ngIf="priceHidden">价格：{{item.gprice}}</p>
+                                    
+                                    <div>
+                                        <p><span><img src="assets/images/用户.png" style="vertical-align:middle;width: 20px;height: 20px;margin-right: 4px;"></span>{{item.username}}</p>
+                                        <p><span><img src="assets/images/日期.png" style="vertical-align:middle;width: 20px;height: 20px;margin-right: 4px;"></span>{{cutTime(item.release_time)}}</p>
+                                    </div>  
+                                </div>
+
+                           </div>
+                           <!-- <div class="good-item">
+                                <div class="img-box">
+                                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                                </div>
+                                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                                <div>
+                                    收藏于：10月20日
+                                </div>
+                           </div>
+                           <div class="good-item">
+                                <div class="img-box">
+                                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                                </div>
+                                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                                <div>
+                                    收藏于：10月20日
+                                </div>
+                           </div>
+                           <div class="good-item">
+                                <div class="img-box">
+                                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                                </div>
+                                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                                <div>
+                                    收藏于：10月20日
+                                </div>
+                           </div>
+                           <div class="good-item">
+                                <div class="img-box">
+                                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                                </div>
+                                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                                <div>
+                                    收藏于：10月20日
+                                </div>
+                           </div>
+                           <div class="good-item">
+                                <div class="img-box">
+                                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                                </div>
+                                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                                <div>
+                                    收藏于：10月20日
+                                </div>
+                           </div>
+                           <div class="good-item">
+                                <div class="img-box">
+                                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                                </div>
+                                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                                <div>
+                                    收藏于：10月20日
+                                </div>
+                           </div>
+                           <div class="good-item">
+                                <div class="img-box">
+                                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                                </div>
+                                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                                <div>
+                                    收藏于：10月20日
+                                </div>
+                           </div> -->
+                        </div>
+                    </div>
+                </div>
+                                
             </div>
             <div class="pagebox"></div>
           </div>
        </div>
-
-    </div>
 </div>

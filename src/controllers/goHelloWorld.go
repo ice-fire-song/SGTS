@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"github.com/astaxie/beego/logs"
-	"golang.org/x/tools/go/ssa/interp/testdata/src/fmt"
-	"net/http"
 	"../models"
+	"fmt"
+	"github.com/astaxie/beego/logs"
+	"net/http"
 )
 
 func GoHelloWorld(w http.ResponseWriter, r *http.Request) {
@@ -27,7 +27,7 @@ func GetGoodsType(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// 根据货品种类id、货品的类别获取货品
+// 主页：根据货品种类id、货品的类别获取货品
 func GetGoodsByType(w http.ResponseWriter, r *http.Request) {
 	body, err := GetBodyData(r)
 	if err != nil {
@@ -35,6 +35,7 @@ func GetGoodsByType(w http.ResponseWriter, r *http.Request) {
 		ErrorResp(w, r, err.Error(), http.StatusInternalServerError) //500
 		return
 	}
+	logs.Info("调用GetGoodsByType")
 	logs.Info(body)
 	data, ok := body["data"].(map[string]interface{})
 	if !ok {
@@ -43,7 +44,7 @@ func GetGoodsByType(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	logs.Info(data)
-	//uid, ok1 := data["uid"].(float64)
+	key, _ := data["key"].(string)
 	gt_id, ok2 := data["gt_id"].(float64)
 	category_id, ok3 := data["category_id"].(float64)
 	if !ok2 || !ok3 {
@@ -52,8 +53,8 @@ func GetGoodsByType(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	str := fmt.Printf("获取gt_id：%f, category_id：%f的货品", gt_id, category_id)
-	respData, err := models.GetGoodsByType(int64(gt_id), int64(category_id))
+	str := fmt.Sprintf("获取gt_id：%f, category_id：%f的货品", gt_id, category_id)
+	respData, err := models.GetGoodsByType(int64(gt_id), int64(category_id), key)
 	logs.Info(respData)
 	if err != nil {
 		str += "失败"

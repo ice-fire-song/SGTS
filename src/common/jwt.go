@@ -19,7 +19,7 @@ type jwtCustomClaims struct {
 
 // 刷新token
 func NewCookie(username string, isAdmin bool)(newCookie string, err error) {
-	newToken, err := CreateToken([]byte(SecretKey), "sgst", username, isAdmin)
+	newToken, err := CreateToken([]byte(SecretKey), "sgts", username, isAdmin)
     if err != nil {
     	logs.Error(err)
     	return "", err
@@ -49,9 +49,14 @@ func CreateToken(SecretKey []byte, issuer string, username string, isAdmin bool)
 // 解析token
 func ParseToken(tokenSrt string, SecretKey []byte) (username string, err error) {	//解析token
 	var token *jwt.Token
-	token, err = jwt.Parse(tokenSrt, func(*jwt.Token) (interface{}, error) {
+	token, err = jwt.Parse(tokenSrt, func(token *jwt.Token) (interface{}, error) {
 		return SecretKey, nil
 	})
+
+	if token == nil {
+		logs.Info("token is nil")
+		return "", nil
+	}
 	claims := token.Claims
 	logs.Info("claims:", claims)
 	logs.Info(fmt.Sprintf("claims uid:%v,claims uid type:%T\n", claims.(jwt.MapClaims)["username"],claims.(jwt.MapClaims)["username"]))

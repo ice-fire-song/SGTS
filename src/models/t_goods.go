@@ -20,19 +20,20 @@ type Good struct {
 	Status  int  `json:"status"`
 	//MobilePhoneNumber string `json:"mobilephone_number"`
 	//GLiaison  string `json:"gliaison"`
-	//Openid  string `json:"openid"`
+	//Openid  string `jso
+	// n:"openid"`
 	//Qq       string `json:"qq"`
 	ReleaseTime time.Time `json:"release_time"`
 }
 
-func AddGood(goodInfo *Good) (bool, error) {
+func AddGood(goodInfo *Goods) (bool, error) {
 	if goodInfo == nil {
 		err := fmt.Errorf("illegal param")
 		logs.Error(err)
 		return false, err
 	}
-	stmt, err := db.Exec("insert into t_goods(uid,gtype,gname,gprice,gdetail,category_id,status) VALUES ($1,$2,$3,$4,$5,$6,$7)",
-		goodInfo.Uid,goodInfo.GType,goodInfo.GName,goodInfo.GPrice,goodInfo.GDetail,goodInfo.CategoryId,goodInfo.Status)
+	stmt, err := db.Exec("insert into t_goods(uid,gname,gprice,gdetail,category_id,gt_id) VALUES ($1,$2,$3,$4,$5,$6)",
+		goodInfo.Uid,goodInfo.Gname,goodInfo.Gprice,goodInfo.Gdetail,goodInfo.CategoryId,goodInfo.Gtid)
 	if err != nil {
 		logs.Error(err)
 		return false, err
@@ -77,21 +78,21 @@ func ModifyGood(goodInfo *Good) (bool, error) {
 
 // 根据货品类型获取
 // 分为商品、需求、免费货品
-func GetAllGoods(goodType int, label int, keyWord string)(goodsList *[]Good, err error) {
+func GetAllGoods(category_id int64, label int64, keyWord string)(goodsList *[]Good, err error) {
 	var query string
 	var rows *sql.Rows
-	if goodType == 0 {
+	if category_id == -1 {
 		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time)" +
 			"from t_goods where label=$1 and gname like $2 order by send_time asc"
 		rows, err = db.Query(query, label, keyWord)
 	}else if label == 0 {
 		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time)" +
 			"from t_goods where gtype=$1 and gname like $2 order by send_time asc"
-		rows, err = db.Query(query, goodType, keyWord)
+		rows, err = db.Query(query, category_id, keyWord)
 	}else {
 		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time)" +
 			"from t_goods where gtype=$1 and gname like $2 gid = (select gid from t_goods_label where label=$3)order by send_time asc"
-		rows, err = db.Query(query, goodType, keyWord,label)
+		rows, err = db.Query(query, category_id, keyWord,label)
 	}
 	if err != nil {
 		logs.Error(err)
@@ -155,4 +156,154 @@ func DeleteGood(gid int)(bool, error) {
 		return false,errors.New("Affected rows is 0 ")
 	}
 	return true, nil
+}
+
+// 获取货品的信息
+func GetGoodInfo(gid int64) (good Goods, err error){
+	queryStr := "select t_user.username, gid, uid, gname, gprice, gdetail,category_id,click_number, status, release_time,type_name from t_goods, t_user, t_goods_type "  +
+		"where  gid=$1 and t_goods.uid=t_user.uid and t_goods.gt_id=t_goods_type.gt_id;"
+	rows, err := db.Query(queryStr, gid)
+	if err != nil {
+		logs.Error(err)
+		return
+	}
+	defer rows.Close()
+
+	var username string
+	var uid int64
+	var gname string
+	var gprice float64
+	var gdetail string
+	var status int64
+	var click_number int64
+	var release_time time.Time
+	var type_name string
+	var category_id int64
+	var category string
+	for rows.Next() {
+
+		err = rows.Scan(&username, &gid, &uid, &gname, &gprice, &gdetail, &category_id, &click_number, &status, &release_time,&type_name)
+		if err != nil {
+			logs.Error(err)
+			return
+		}
+		good.Username = username
+		good.Gid = gid
+		good.Uid = uid
+		good.Gname = gname
+		good.Gprice = gprice
+		good.Gdetail = gdetail
+		good.CategoryId = category_id
+		switch category_id {
+		case 0:
+			category = "免费商品"
+		case 1:
+			category = "商品"
+		case 2:
+			category = "需求"
+		}
+		good.Category = category
+		good.ClickNumber = click_number
+		good.Status = status
+		good.ReleaseTime = release_time
+		good.TypeName = type_name
+	}
+	return
+}
+
+
+func GetGoodImg(gid int64)(imgList *[]GoodsImg, err error)  {
+	if gid < 1 {
+		err = fmt.Errorf("illegal gid")
+		logs.Error(err)
+		return
+	}
+	logs.Info("ok")
+    queryStr := "select id, gid, image_name,image_ext, save_path, image_size,release_time from t_goods_img where gid=$1"
+
+	rows, err := db.Query(queryStr, gid)
+	if err != nil {
+		logs.Error(err)
+		return
+	}
+	defer rows.Close()
+
+	imgList = new([]GoodsImg)
+	var img GoodsImg
+	var id sql.NullInt64
+	var image_name sql.NullString
+	var image_ext sql.NullString
+	var save_path sql.NullString
+	var image_size sql.NullFloat64
+	var release_time time.Time
+
+	for rows.Next() {
+
+		err = rows.Scan(&id, &gid, &image_name,&image_ext, &save_path, &image_size, &release_time)
+		if err != nil {
+			logs.Error(err)
+			return
+		}
+		img.Id = id.Int64
+		img.Gid = gid
+		img.ImageName = image_name.String
+		img.ImageExt = image_ext.String
+		img.SavePath = save_path.String
+		img.ImageSize = image_size.Float64
+        img.ReleaseTime = release_time
+		*imgList = append(*imgList, img)
+	}
+	logs.Info(imgList)
+	return
+}
+
+// 货品管理
+func GetGoodsByCategory(uid int64, category_id int64, key string)(goodsList *[]Goods, err error)  {
+	logs.Info("ok")
+	var rows *sql.Rows
+    key = "%" + key + "%"
+    logs.Info(key)
+
+	rows, err = db.Query("select  gid, uid, gname, gprice, gdetail,click_number, status, release_time, gt_id from t_goods where  category_id=$1 and status=$2 and uid=$3 and gname like $4;", category_id, 1, uid, key)
+	if err != nil {
+		logs.Error(err)
+		return
+	}
+
+
+	defer rows.Close()
+	goodsList = new([]Goods)
+	var good Goods
+	var gid int64
+	var gname string
+	var gprice float64
+	var gdetail string
+	var status int64
+	var click_number int64
+	var gt_id int64
+	var release_time time.Time
+
+	for rows.Next() {
+
+		err = rows.Scan(&gid, &uid,&gname, &gprice, &gdetail, &click_number, &status, &release_time, &gt_id)
+		if err != nil {
+			logs.Error(err)
+			return
+		}
+		good.Gid = gid
+		good.Uid = uid
+		good.Gname = gname
+		good.Gprice = gprice
+		good.Gdetail = gdetail
+		good.ClickNumber = click_number
+		good.Status = status
+		good.ReleaseTime = release_time
+
+		good.CategoryId = category_id
+		good.Gtid = gt_id
+
+		*goodsList = append(*goodsList, good)
+	}
+	logs.Info(goodsList)
+	return
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { ReqProto } from 'src/app/services/proto'
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 @Component({
   selector: 'app-favour',
   templateUrl: './favour.component.html',
@@ -19,9 +20,11 @@ export class FavourComponent implements OnInit {
   constructor(
     public http: HttpClient,
     private reqProto: ReqProto,
+    private lSData: LocalStorageService
   ) { }
 
   ngOnInit() {
+    this.lSData.set("isLogin", "false");
     this.reqProto.action = "GET";
     this.reqProto.data = {uid: this.uid}
     this.http.post("/api/getFolder", this.reqProto, this.httpOptions).subscribe((response: any) => {

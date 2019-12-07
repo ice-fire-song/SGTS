@@ -1,0 +1,31 @@
+<div class="header" *ngIf="Ishide"  ng-cloak style="background-color: #FFFFFF">
+    <div class="logo_uname">
+        <div class="logo">
+            <img src="assets/images/logo.PNG" width="100%" height="100%">
+        </div>
+    </div>
+    <div class="nav-box">
+        <div class="nav-wrapper">
+            <div class="con-space"></div>
+
+            
+            <div class="nav-con">
+                <ul>  
+                    <!-- <li class="nav-item"><a click="jump('个人中心')">个人中心</a></li> -->
+                    <li class="nav-item"><nz-avatar nzIcon="user" style="border:0.2px solid rgb(202, 200, 200);margin-right: 3px;" nzSrc="{{userInfo.head_sculpture_path}}" (click)="clickHeadImg()"></nz-avatar><span *ngIf="userInfo.username==''"><a (click)="jump('登录')">请登录!</a></span></li>
+                    <li class="nav-item"><a click="jump('私信')">私信</a></li>
+                    <li class="nav-item"><a click="jump('收藏')">收藏</a></li>
+                    <li class="nav-item"><a click="jump('发布中心')">发布中心</a></li>
+                </ul>
+            </div>
+            <div class="up-load">
+                    <a href="//member.bilibili.com/v2#/upload/video/frame" target="_blank" class="u-link"> 上传 </a>
+                    <!---->
+            </div>
+        </div>
+    </div>
+    <div class="uname">
+        <span class="logout"><a (click)="logout()">注销</a></span>
+    </div>
+</div>
+<div style="width:100%;height: 50px;" *ngIf="Ishide"></div>

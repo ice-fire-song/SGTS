@@ -45,7 +45,7 @@
                         <div class="img-box">
                             <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
                         </div>
-                        <p>{{item.gname}}</p>
+                        <p><a class="good-name" (click)="toDetail()">{{item.gname}}</a></p>
                         <div>
                             收藏于：{{cutTime(item.create_time)}}
                         </div>

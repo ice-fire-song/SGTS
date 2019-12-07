@@ -1,0 +1,120 @@
+<div class="content">
+    <div class="tab">
+        <div class="tab-item">
+            <p (click)="switch(0)">免费商品</p>
+        </div>
+        <div class="tab-item">
+            <p (click)="switch(1)">商品</p>
+        </div>
+        <div class="tab-item">
+            <p (click)="switch(2)">需求</p>
+        </div>
+    </div>
+    <div class="good-info">
+        <div class="favour-selected">
+            <div class="search-box">
+                <input id="key" type="text" [(ngModel)]="inputValue" placeholder="请输入关键词">
+                <button class="search-btn" (click)="search()">搜索</button>
+            </div>
+        </div>
+        <div class="goods">
+           <div class="good-item" *ngFor="let item of goodList">
+                <div class="img-box">
+                    <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                </div>
+                <p><a class="good-name" (click)="toDetail()">{{item.gname}}</a></p>
+                <p *ngIf="priceHidden">价格：{{item.gprice}}</p>
+                <div>
+                    发布于：{{cutTime(item.release_time)}}
+                </div>
+                <div class="opt-btn">
+                    <button
+                        nz-popconfirm
+                        nzPopconfirmTitle="确认下架?"
+                        (nzOnConfirm)="confirm('下架')"
+                        (nzOnCancel)="cancel()"
+                        nzPopconfirmPlacement="top"
+                        nz-button
+                        >
+                        下架
+                  </button>
+                  <button
+                        nz-popconfirm
+                        nzPopconfirmTitle="确认删除?"
+                        (nzOnConfirm)="confirm('删除')"
+                        (nzOnCancel)="cancel()"
+                        nzPopconfirmPlacement="top"
+                        nz-button
+                        >
+                        删除
+                    </button>
+                    <button nz-button nzType="primary">修改</button>
+                </div>
+           </div>
+           <!-- <div class="good-item">
+                <div class="img-box">
+                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                </div>
+                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                <div>
+                    收藏于：10月20日
+                </div>
+           </div>
+           <div class="good-item">
+                <div class="img-box">
+                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                </div>
+                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                <div>
+                    收藏于：10月20日
+                </div>
+           </div>
+           <div class="good-item">
+                <div class="img-box">
+                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                </div>
+                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                <div>
+                    收藏于：10月20日
+                </div>
+           </div>
+           <div class="good-item">
+                <div class="img-box">
+                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                </div>
+                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                <div>
+                    收藏于：10月20日
+                </div>
+           </div>
+           <div class="good-item">
+                <div class="img-box">
+                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                </div>
+                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                <div>
+                    收藏于：10月20日
+                </div>
+           </div>
+           <div class="good-item">
+                <div class="img-box">
+                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                </div>
+                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                <div>
+                    收藏于：10月20日
+                </div>
+           </div>
+           <div class="good-item">
+                <div class="img-box">
+                    <a href="./html/aodili.html"><img src="images/奥地利.jpg"></a>
+                </div>
+                <p>奥地利基茨比厄尔，滑雪小镇里的冬天</p>
+                <div>
+                    收藏于：10月20日
+                </div>
+           </div> -->
+        </div>
+    </div>
+</div>
+
