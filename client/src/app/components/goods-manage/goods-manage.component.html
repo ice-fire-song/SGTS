@@ -1,1 +1,17 @@
-<p>goods-manage works!</p>
+<div class="background">
+    <div class="main">
+        <div class="big-box">
+            <div class="left-nav">
+                <div class="nav-item">
+                    <a [routerLink]="['upload']">货品上传</a>
+                </div>
+                <div class="nav-item">
+                    <a [routerLink]="['manage']">货品管理</a>
+                </div>
+            </div>
+            <div class="rigth-content">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

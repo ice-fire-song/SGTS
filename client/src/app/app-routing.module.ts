@@ -6,16 +6,27 @@ import { RegisterComponent } from './components/register/register.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { FavourComponent } from './components/favour/favour.component';
 import { GoodsManageComponent } from './components/goods-manage/goods-manage.component';
+import { UploadComponent } from './components/goods-manage/upload/upload.component';
+import { ManageComponent } from './components/goods-manage/manage/manage.component';
+import { GoodDetailComponent } from './components/good-detail/good-detail.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: "favour", pathMatch: 'full' },
+  { path: '', redirectTo: "login", pathMatch: 'full' },
   { path: "login", component: LoginComponent },
   { path: "home", component: HomeComponent },
   { path: "register", component: RegisterComponent },
   { path: "chat", component: ChatComponent },
   { path: "favour", component: FavourComponent },
-  { path: "goods-manage", component: GoodsManageComponent }
+  { path: "detail", component: GoodDetailComponent },
+  {
+    path: "goodsmanage", component: GoodsManageComponent,
+    children: [
+      { path: "", component: UploadComponent },
+      { path: "upload", component: UploadComponent },
+      { path: "manage", component: ManageComponent }
+    ]
+  }
 ];
 
 @NgModule({

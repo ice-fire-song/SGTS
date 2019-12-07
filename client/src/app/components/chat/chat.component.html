@@ -15,12 +15,12 @@
                                 <div class="sender-msg-left">
                                     <div class="avatar" title="哔哩哔哩" style="background-image: url(https://i2.hdslb.com/bfs/face/01365904ffb64d1858da7e20e1040b9f2d94165d.jpg@42w_42h_1c.webp);"></div>
                                 </div>
-                                <div class="sender-msg-right">
+                                <div class="sender-msg-right" *ngFor="let item of senderList" (click)="getRecords(item.uid, item.username)">
                                     <div class="sender-name">
-                                        哔哩哔哩大会员
+                                        {{item.username}}
                                     </div>
                                     <div class="one-msg">
-                                        最新一条信息 最新一条信息 最新一条信息
+                                        {{item.latestMsg}}
                                     </div>
                                 </div>
                             </div>
@@ -32,20 +32,20 @@
 
             <div class="content-box-right">
                 <div class="content-right-title">
-                    <p>当前聊天的用户名</p>
+                    <p>{{senderNameSelected}}</p>
                 </div>
 
                 <div class="content-list">
                     <ul>
-                        <li class="content-list-item">
+                        <li class="content-list-item" *ngFor="let item of msgList">
                             <div class="time-box">
-                                <p>2019年4月9日</p>
+                                <p>{{item.create_time}}</p>
                             </div>
                             <div class="msg-item">
                                 <div class="user-img" style="background-image: url(https://i2.hdslb.com/bfs/face/01365904ffb64d1858da7e20e1040b9f2d94165d.jpg@30w_30h_1c.webp);"></div>
                                 <div class="message">
                                     <div class="message-content">
-                                    平凡职业造就世界最强》漫画领券免费看！点击即可获得《平职》漫画阅读券10张，快来领取吧
+                                    {{item.content}}
                                     </div>
                                 </div>
                             </div>
@@ -56,10 +56,10 @@
 
                 <div class="send-box-bottom">
                     <div class="input-box">
-                       <textarea placeholder="回复一下吧~" maxlength="500" autofocus="autofocus" class="textarea"></textarea>
+                       <textarea [(ngModel)]="msgInput" placeholder="回复一下吧~" maxlength="500" autofocus="autofocus" class="textarea"></textarea>
                     </div>
                     <div class="send-button">
-                        <button>发送</button>
+                        <button (click)="send()">发送</button>
                     </div>
                 </div>
 

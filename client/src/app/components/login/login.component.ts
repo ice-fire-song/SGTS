@@ -5,6 +5,7 @@ import axios from "axios";
 import { NzMessageService } from 'ng-zorro-antd';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LocalStorageService } from '../../services/local-storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -66,7 +67,9 @@ export class LoginComponent implements OnInit {
     this.reqProto.data = formData;
     that.http.post(url, this.reqProto, httpOptions).subscribe(res => {
       console.log(res);
-      this.router.navigate(['/home'])
+      this.lSData.remove("isLogin");
+      this.lSData.set("isLogin", "false");
+      this.router.navigate(['/home']);
     });
   }
 
@@ -76,9 +79,11 @@ export class LoginComponent implements OnInit {
     public router: Router,
     private nzMessageService: NzMessageService,
     private http: HttpClient,
+    private lSData: LocalStorageService
   ) { }
 
   ngOnInit(): void {
+    this.lSData.set("isLogin", "true");
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],

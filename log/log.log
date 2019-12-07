@@ -1,1 +1,8 @@
 2019/10/02 14:15:12.125 [E] [initDB.go:43]  open conf.ini: The system cannot find the file specified.
+2019/11/27 16:37:42.235 [E] [initDB.go:45]  open conf.ini: The system cannot find the file specified.
+2019/11/27 16:40:14.239 [E] [initDB.go:45]  open ../conf.ini: The system cannot find the file specified.
+2019/11/27 16:41:22.557 [E] [initDB.go:45]  open ./conf.ini: The system cannot find the file specified.
+2019/11/27 16:41:44.709 [E] [initDB.go:45]  open ../src/conf.ini: The system cannot find the file specified.
+2019/11/27 16:44:17.067 [E] [initDB.go:45]  open conf.ini: The system cannot find the file specified.
+2019/11/27 19:45:58.354 [E] [initDB.go:45]  open ../../src/conf.ini: The system cannot find the path specified.
+2019/11/27 19:46:50.607 [E] [initDB.go:45]  open conf.ini: The system cannot find the file specified.

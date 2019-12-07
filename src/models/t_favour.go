@@ -1,9 +1,11 @@
 package models
 
 import (
+	//"database/sql"
 	"errors"
 	"fmt"
 	"github.com/astaxie/beego/logs"
+	//"time"
 )
 
 func AddFavour(gid, uid int) error{
@@ -87,8 +89,8 @@ func GetFavourOfGood(uid int)(glList *[]Favour, err error) {
 	glList = new([]Favour)
 	var favour Favour
 	for rows.Next() {
-		var fid int
-		var gid int
+		var fid int64
+		var gid int64
 		err = rows.Scan(fid, gid)
 		if err != nil {
 			logs.Error(err)
@@ -126,3 +128,4 @@ func CancelLabel(fid int)(bool, error) {
 	}
 	return true, nil
 }
+

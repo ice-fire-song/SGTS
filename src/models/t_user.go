@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"time"
 
 	"github.com/astaxie/beego/logs"
 )
@@ -144,4 +145,32 @@ func RegisterUser(username, password string) error {
 		return errors.New("Affected rows is 0 ")
 	}
 	return nil
+}
+
+func GetUserInfo(username string) (user User, err error) {
+	if len(username) == 0 {
+		err = fmt.Errorf("username can not is null")
+		logs.Error(err)
+		return
+	}
+	var uid  int64
+	var user_role int64
+	var head_sculpture_path string
+	var label sql.NullString
+	var create_time time.Time
+	var status int64
+	queryStr := "select uid,user_role,head_sculpture_path, label, create_time,status from t_user where username=$1 "
+	err = db.QueryRow(queryStr, username).Scan(&uid,&user_role,&head_sculpture_path, &label, &create_time,&status)
+	if err != nil {
+		logs.Error(err)
+		return
+	}
+	user.Uid = uid
+	user.Username = username
+	user.HeadSculpturePath = head_sculpture_path
+	user.Label = label.String
+	user.CreateTime = create_time
+	user.Status = status
+	return
+
 }

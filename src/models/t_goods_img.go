@@ -73,8 +73,8 @@ func GetImages(goodId int)(goodImagesList *[]GoodsImg, err error) {
 	goodImagesList = new([]GoodsImg)
 	var gi GoodsImg
 	for rows.Next() {
-		var id int
-		var gid int
+		var id int64
+		var gid int64
 		var image_name string
 		var image_ext string
 		var save_path string

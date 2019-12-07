@@ -1,0 +1,84 @@
+<div class="content">
+    <div class="tab">
+        <div class="tab-item">
+            <p (click)="switch(0)">免费商品</p>
+        </div>
+        <div class="tab-item">
+            <p (click)="switch(1)">商品</p>
+        </div>
+        <div class="tab-item">
+            <p (click)="switch(2)">需求</p>
+        </div>
+    </div>
+    <div class="good-info">
+        <div>
+            <p>货品名称：</p>
+            <input type="text" [(ngModel)]="gname" placeholder="请输入货品名称"/>
+        </div>
+        <div>
+            <p>货品类别：</p>
+            <div>
+                <nz-select [(ngModel)]="selectedProvince" (ngModelChange)="provinceChange($event)">
+                    <nz-option *ngFor="let p of provinceData" [nzValue]="p" [nzLabel]="p"></nz-option>
+                </nz-select>
+            </div>
+        </div>
+        <div *ngIf="priceHidden">
+            <p>货品价格：</p>
+            <input type="text" [(ngModel)]="gprice" placeholder="请输入货品价格"/>
+        </div>
+        <div>
+            <p>货品详情</p>
+            <textarea [(ngModel)]="gdetail" placeholder="请输入货品的详情" maxlength="500" autofocus="autofocus" class="textarea"></textarea>
+        </div>
+        <div class="label">
+            <nz-tag
+            *ngFor="let tag of tags; let i = index"
+            [nzMode]="'closeable'"
+            (nzAfterClose)="handleClose(tag)"
+          >
+            {{ sliceTagName(tag) }}
+          </nz-tag>
+          <nz-tag *ngIf="!inputVisible" class="editable-tag" nzNoAnimation (click)="showInput()">
+            <i nz-icon nzType="plus"></i> New Tag
+          </nz-tag>
+          <input
+            #inputElement
+            nz-input
+            nzSize="small"
+            *ngIf="inputVisible"
+            type="text"
+            [(ngModel)]="inputValue"
+            style="width: 78px;"
+            (blur)="handleInputConfirm()"
+            (keydown.enter)="handleInputConfirm()"
+          />
+        </div>
+        <div class="clearfix">
+            <p>上传图片</p>
+            <nz-upload
+              class="upload-list-inline"
+              nzListType="picture"
+              [nzBeforeUpload]="beforeUpload" 
+              [nzMultiple]="true"
+              [(nzFileList)]="fileList2"
+            >
+              <button nz-button (click)="uploadsure()">
+                <span><i nz-icon nzType="upload"></i> Upload</span>
+              </button>
+            </nz-upload>
+          </div>
+        <div>
+            <button
+            nz-popconfirm
+            nzPopconfirmTitle="是否上传?"
+            (nzOnConfirm)="confirm()"
+            (nzOnCancel)="cancel()"
+            nzPopconfirmPlacement="top"
+            nz-button
+          >
+            上传
+          </button>
+        </div>
+    </div>
+</div>

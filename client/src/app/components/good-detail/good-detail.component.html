@@ -1,0 +1,30 @@
+<div class="background">
+    <div class="main">
+        <div class="detail-box">
+            <div class="base-box">
+                <div class="first-img">
+                    <img src="/assets/images/奥地利.jpg">
+                </div>
+                <div>
+                    <div>名称：{{good.gname}}</div>
+                    <div>类型：{{good.category}}</div>
+                    <div>种类：{{good.type_name}}</div>
+                    <div>
+                        <p>点击量：{{good.click_number}}</p>
+                        <div><img src="/assets/images/收藏.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-img-box">
+                <div class="detail-content">
+                    <div>{{good.detail}}</div>
+                </div>
+                <div class="detail-img">
+                    <div class="img-item" *ngFor="let item of imgList">
+                        <img src="/assets/images/奥地利.jpg">
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>

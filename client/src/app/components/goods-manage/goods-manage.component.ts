@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-goods-manage',
@@ -10,6 +11,7 @@ export class GoodsManageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  
   }
 
 }
