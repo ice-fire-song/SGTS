@@ -4,6 +4,9 @@ import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { ReqProto } from 'src/app/services/proto'
 import { LocalStorageService } from '../../../services/local-storage.service';
 import { Router } from '@angular/router';
+import { UserInfoServiceService } from 'src/app/services/user-info-service.service';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-manage',
   templateUrl: './manage.component.html',
@@ -13,22 +16,39 @@ export class ManageComponent implements OnInit {
   public httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  public uid: number = 1;
+  
   public goodList: any;
   public priceHidden: boolean = false;
   public inputValue: string = "";
   public category_id: number = 0;
+  public uid: number;
+  private userInfo: any;
+  subscription: Subscription;
   constructor(
     private nzMessageService: NzMessageService,
     public http: HttpClient,
     private reqProto: ReqProto,
     private router: Router,
-    private lSData: LocalStorageService
-  ) { }
+    private lSData: LocalStorageService,
+    private uIService: UserInfoServiceService
+  ) { 
+    this.subscription = this.uIService.titleObservable.subscribe((src:any) => {
+      console.log('得到的userInfo:' + src);
+      this.userInfo = JSON.parse(src);
+      console.log("userinfo:",this.userInfo)
+      if (this.userInfo != null) {
+        this.uid = this.userInfo.uid;
+        this.lSData.set("isLogin", "false");
+        this.search();
+      } else {
+        console.log("manage: 未接收到来自navigation的userInfo，则用户不处于登录状态或出错，将跳转到login"); 
+        this.router.navigate(["/login"]);
+      }
+    });
+  }
  
   ngOnInit() {
-    this.lSData.set("isLogin", "false");
-    this.search();
+
   }
   // 跳转到货品详情
   toDetail(good: any) {
@@ -63,20 +83,26 @@ export class ManageComponent implements OnInit {
     this.nzMessageService.info('取消成功');
   }
  // 0 删除、1 上架、2下架
-  confirm(opt: string): void {
+  confirm(opt: string,gid: number): void {
+    console.log("opt", opt)
     let good_status: number;
     if (opt == "下架") {
       good_status = 2;
     } else if (opt == "删除") {
       good_status = 0;
     }
+    console.log("opt", opt)
     this.reqProto.action = "POST";
     this.reqProto.data = {
+      gid: gid,
       good_status: good_status,
     }
     this.http.post("/api/modifyGoodStatus", this.reqProto, this.httpOptions).subscribe((res: any) => {
-      if (res.data.resultCode == 1) {
-        this.goodList.splice(0, this.goodList.length - 1);
+      console.log(res)
+      if (res.data.isSuccess) {
+        if (good_status == 0) {
+          this.goodList.splice(0, this.goodList.length - 1);
+        }
         this.nzMessageService.info(opt + '成功');
       } else {
         this.nzMessageService.info(opt + '失败');

@@ -32,38 +32,38 @@ export class HomeComponent implements OnInit {
 
   private userInfo: any;
   ngOnInit() {
-    this.lSData.set("isLogin", "false");
-    
     this.http.get("/api/getGoodsType", this.httpOptions).subscribe((res: any) => {
       this.classList = res.data;
       console.log("货品类型", res);
     })
     this.search();
   }
-    // tab切换货品种类
+    // tab切换货品类型
   switchType(gt_id: number) {
     this.gt_id = gt_id;
     this.inputValue = "";
     this.search();
   }
+  // tab切换货品类别
   switchCategory(category_id: number) {
     this.category_id = category_id;
     this.search();
   }
-    search() {
-      this.reqProto.action = "POST";
-      this.reqProto.data = {
-        gt_id: this.gt_id,
-        category_id: this.category_id,
-        key: this.inputValue
-      }
-      console.log(this.reqProto);
-      this.http.post("/api/getGoodsByType", this.reqProto, this.httpOptions).subscribe((res: any) => {
-        this.goodList = res.data;
-        console.log("res:")
-        console.log(res);
-      })
+  // 按货品类型、类别、关键进行检索
+  search() {
+    this.reqProto.action = "POST";
+    this.reqProto.data = {
+      gt_id: this.gt_id,
+      category_id: this.category_id,
+      key: this.inputValue
     }
+    console.log(this.reqProto);
+    this.http.post("/api/getGoodsByType", this.reqProto, this.httpOptions).subscribe((res: any) => {
+      this.goodList = res.data;
+      console.log("res:")
+      console.log(res);
+    })
+  }
     // 获取时间
     cutTime(time: string): string {
       if (time === undefined || time == null) {

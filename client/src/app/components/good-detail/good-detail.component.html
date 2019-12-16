@@ -2,26 +2,48 @@
     <div class="main">
         <div class="detail-box">
             <div class="base-box">
-                <div class="first-img">
-                    <img src="/assets/images/奥地利.jpg">
+                <div class="first-img-left">
+                    <div class="img-box"><img src="{{good.first_img_path}}"></div>
                 </div>
-                <div>
-                    <div>名称：{{good.gname}}</div>
-                    <div>类型：{{good.category}}</div>
-                    <div>种类：{{good.type_name}}</div>
-                    <div>
-                        <p>点击量：{{good.click_number}}</p>
-                        <div><img src="/assets/images/收藏.png"></div>
+                <div class="content-right">
+                    <div class="row">名称：{{good.gname}}</div>
+                    <div *ngIf="good.category_id==1" class="row">价格：{{item.gprice}}</div>
+                    <div class="row">类型：{{good.category}}</div>
+                    <div class="row">种类：{{good.type_name}}</div>
+                    <div class="row" id="row4">
+                        <p id="click-number-left">点击量：{{good.click_number}}</p>
+                        <div id="favour-right" (click)="addFavour()">
+                            <img class="heart-left" src="{{favourStatusImg}}">
+                            <span class="text-right">收藏</span>
+                        </div>
+                    </div>
+                    <div class="row" id="row5">
+                        <p id="user-left"><span><img src="assets/images/用户.png" style="vertical-align:middle;width: 20px;height: 20px;margin-right: 20px;"></span>{{good.username}}</p>
+                        <p id="date-right"><span><img src="assets/images/日期.png" style="vertical-align:middle;width: 20px;height: 20px;margin-right: 20px;"></span>{{cutTime(good.release_time)}}</p>
+                    </div>  
+                    <div id="row">
+                        <nz-avatar nzIcon="user" id="avatar" style="float:left;border:0.2px solid rgb(202, 200, 200);margin-right: 3px;" nzSrc="{{userInfo.head_sculpture_path}}" (click)="jump('个人中心')"></nz-avatar><span *ngIf="userInfo.username==''"><a (click)="jump('登录')">请登录!</a></span>
+                        <div class="container">
+                            <div class="parent">
+                                <input type="text" class="input-search" [(ngModel)]="message_content" placeholder="请输入私信内容">
+                                <input type="button" value="发送" name="" id="" class="btn" (click)="sendLetter()">
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>
             <div class="detail-img-box">
                 <div class="detail-content">
-                    <div>{{good.detail}}</div>
+                    <p>货品详情</p>
+                    <div class="detail">{{good.gdetail}}</div>
                 </div>
                 <div class="detail-img">
-                    <div class="img-item" *ngFor="let item of imgList">
-                        <img src="/assets/images/奥地利.jpg">
+                    <p>货品图片</p>
+                    <!-- <div class="img-item" *ngFor="let item of imgList">
+                        <img src="{{item.save_path}}">
+                    </div> -->
+                    <div class="img-item">
+                        <img src="{{good.first_img_path}}">
                     </div>
                 </div>
             </div>

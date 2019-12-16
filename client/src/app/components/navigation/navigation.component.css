@@ -91,7 +91,7 @@ a {
     text-decoration: none;
     color:inherit;
 }
-a:hover {
+a, #avatar:hover {
     cursor: pointer;
     color: #78a5f1;
 }

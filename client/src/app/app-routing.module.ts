@@ -9,6 +9,8 @@ import { GoodsManageComponent } from './components/goods-manage/goods-manage.com
 import { UploadComponent } from './components/goods-manage/upload/upload.component';
 import { ManageComponent } from './components/goods-manage/manage/manage.component';
 import { GoodDetailComponent } from './components/good-detail/good-detail.component';
+import { PersonalCenterComponent } from './components/personal-center/personal-center.component';
+import { ManagePageComponent } from './components/manage-page/manage-page.component';
 
 
 const routes: Routes = [
@@ -26,7 +28,9 @@ const routes: Routes = [
       { path: "upload", component: UploadComponent },
       { path: "manage", component: ManageComponent }
     ]
-  }
+  },
+  { path: "personalcenter", component: PersonalCenterComponent },
+  { path: "managepage", component: ManagePageComponent },
 ];
 
 @NgModule({

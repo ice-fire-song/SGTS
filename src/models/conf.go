@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 // 用户表
 type User struct {
 	Uid                   int64  `json:"uid"`
@@ -9,6 +11,7 @@ type User struct {
 	UserRole             int64  `json:"user_role"`
 	HeadSculpturePath   string  `json:"head_sculpture_path"`
 	Label                 string   `json:"label"`
+	Mailbox               string `json:"mailbox"`
 	CreateTime           time.Time   `json:"create_time"`
 	Status                int64  `json:status`
 }
@@ -44,8 +47,15 @@ type Goods struct {
 	Username string `json:"username"`
 	TypeName string `json:"type_name"`
 	Category string `json:"category"`
+	FirstImgPath string `json:"first_img_path"`
 }
-
+type Image struct {
+	Gid float64         `json:"gid"`       // 货品id
+	Image_name string   `json:"image_name"`  // 图片名称
+	Image_ext string    `json:"image_ext"`    // 图片扩展名
+	Save_path string    `json:"save_path"`   // 图片路径
+	Image_size float64  `json:"image_size"`     // 图片大小
+}
 // 货品标签表
 type GoodsLabel struct {
 	Gid  int64 `json:"gid"`
@@ -81,7 +91,7 @@ type Favour struct {
 
 //收藏夹
 type FavourDir struct{
-	Fdid                int64       `json:"fdid"`
+	Fdid                int64       `json:"fd_id"`
 	Foldername          string    `json:"foldername"`
 	CreateTime         time.Time `json:"create_time"`
 	Uid                 int64       `json:"uid"`

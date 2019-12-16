@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReqProto } from 'src/app/services/proto'
 import { Router } from '@angular/router';
-import axios from "axios";
 import { NzMessageService } from 'ng-zorro-antd';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -12,36 +11,7 @@ import { LocalStorageService } from '../../services/local-storage.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  // public username: String
-  // public password: String
-  // constructor(
-  //   private reqProto: ReqProto,
-  //   public router: Router,
-  //   private nzMessageService: NzMessageService,
-  //   private http: HttpClient,
-  // ) { }
 
-  // ngOnInit() {
-  // }
-  // login() {
-
-  //   let that = this
-  //   if (this.username == "" || this.password == "") {
-  //     that.nzMessageService.info("账号密码不为空")
-  //     return
-  //   }
-  //   var url = "/api/login"
-  //   console.log(this.reqProto)
-  //   let formData = {
-  //     username: this.username,
-  //     password: this.password
-  //   }
-  //   this.reqProto.data = formData;
-  //   that.http.post(url, this.reqProto, httpOptions).subscribe(res => {
-  //     console.log(res);
-  //     this.router.navigate(['/home'])
-  //   });
-  // }
   validateForm: FormGroup;
 
   submitForm(): void {
@@ -65,11 +35,13 @@ export class LoginComponent implements OnInit {
       password: password1
     }
     this.reqProto.data = formData;
-    that.http.post(url, this.reqProto, httpOptions).subscribe(res => {
-      console.log(res);
-      this.lSData.remove("isLogin");
-      this.lSData.set("isLogin", "false");
-      this.router.navigate(['/home']);
+    that.http.post(url, this.reqProto, httpOptions).subscribe((res: any) => {
+      if (res.data) {
+        this.router.navigate(['/managepage']);
+      } else {
+        this.router.navigate(['/home']);
+      }
+     
     });
   }
 

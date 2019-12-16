@@ -1,0 +1,92 @@
+<div class="background">
+    <div class="main">
+        <div class="data-box">
+            <div class="select-box">
+                <div class="src-box">
+                    <div class="src-all">
+                        <button nz-button nzType="primary" (click)="switchType(-1)">全部货品</button>
+                    </div>
+                    <div class="src1">
+                        <span>免费商品：</span>
+                        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="全部类型" [(ngModel)]="selectedFree" (ngModelChange)="switchType(0)">
+                            <nz-option nzLabel="全部类型" nzValue="全部类型" (ngModelChange)="switchType(0,0)"></nz-option>
+                            <nz-option *ngFor="let item of classList" nzLabel="{{item.type_name}}" nzValue="{{item.type_name}}" (click)="switchType(0,item.gt_id)"></nz-option>
+                        </nz-select>
+                    </div>
+                    <div class="src1">
+                        <span>商品：</span>
+                        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="全部类型" [(ngModel)]="selectedGood" (ngModelChange)="switchType(1)">
+                            <nz-option nzLabel="全部类型" nzValue="全部类型" (click)="switchType(1,0)"></nz-option>
+                            <nz-option *ngFor="let item of classList" nzLabel="{{item.type_name}}" nzValue="{{item.type_name}}" (click)="switchType(1,item.gt_id)"></nz-option>
+                        </nz-select>
+                    </div>
+                    <div class="src1">
+                        <span>需求：</span>
+                        <nz-select nzShowSearch nzAllowClear nzPlaceHolder="全部类型" [(ngModel)]="selectedRequest"  (ngModelChange)="switchType(2)">
+                            <nz-option nzLabel="全部类型" nzValue="全部类型" (click)="switchType(2,0)"></nz-option>
+                            <nz-option *ngFor="let item of classList" nzLabel="{{item.type_name}}" nzValue="{{item.type_name}}" (click)="switchType(2,item.gt_id)"></nz-option>
+                        </nz-select>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="parent">
+                        <input type="text" class="input-search" [(ngModel)]="inputValue" placeholder="请输入关键词">
+                        <input type="button" name="" id="" class="btn" (click)="search()">
+                    </div>
+                </div> 
+            </div>
+            <div class="table-box">
+                <nz-table #basicTable [nzData]="listOfData">
+                    <thead>
+                        <tr>
+                        <th>名称</th>
+                        <th>价格</th>
+                        <th>类别</th>
+                        <th>类型</th>
+                        <th>发布者</th>
+                        <th>状态</th>
+                        <th>发布时间</th>
+                        <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable.data">
+                        <td>{{ data.gname }}</td>
+                        <td>{{ data.gprice }}</td>
+                        <td>{{ data.category }}</td>
+                        <td>{{ data.type_name }}</td>
+                        <td>{{ data.username }}</td>
+                        <td>{{ getCategory(data.status) }}</td>
+                        <td>{{ cutTime(data.release_time) }}</td>
+                        <td>
+                            <button
+                                style="min-width:15px;"
+                                nz-popconfirm
+                                nzPopconfirmTitle="Are you sure down this task?"
+                                (nzOnConfirm)="confirm('下架',data.gid)"
+                                (nzOnCancel)="cancel()"
+                                nzPopconfirmPlacement="top"
+                                nz-button
+                                >
+                                下架
+                            </button>
+                            <nz-divider nzType="vertical" id="divider"></nz-divider>
+                            <button
+                             style="min-width:15px;"
+                                nz-popconfirm
+                                nzPopconfirmTitle="Are you sure delete this task?"
+                                (nzOnConfirm)="confirm('删除',data.gid)"
+                                (nzOnCancel)="cancel()"
+                                nzPopconfirmPlacement="top"
+                                nz-button
+                                >
+                                删除
+                            </button>
+                        </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+    </div>
+</div>

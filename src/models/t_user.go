@@ -9,9 +9,6 @@ import (
 	"github.com/astaxie/beego/logs"
 )
 
-var (
-	HEADSCULPTUREPATH = ""
-)
 
 // 判断用户的身份
 func IsAdmin(username string) (res bool, err error) {
@@ -64,6 +61,7 @@ func LoginVerification(username, password string) (isUserExist bool, err error) 
 		return false, nil
 	}
 }
+// 判断该用户名是否已存在
 func IsUserExist(username string)  (isUserExist bool, err error) {
 	if len(username) == 0 {
 		err := fmt.Errorf("Call IsUserExist with a empty username")
@@ -124,14 +122,15 @@ func IsUserExist(username string)  (isUserExist bool, err error) {
 //}
 
 // 注册
-func RegisterUser(username, password string) error {
-	if len(username) == 0 || len(password) == 0 {
+func RegisterUser(username, password ,mailbox string) error {
+	if len(username) == 0 || len(password) == 0 || len(mailbox) == 0{
 		err := fmt.Errorf("username or password is null")
 		logs.Error(err)
 		return err
 	}
-	stmt, err := db.Exec("insert into t_user(username, password,user_role,head_sculpture_path,status) values($1,$2,$3,$4,$5)",
-		username, password, 0, HEADSCULPTUREPATH, 0)
+	// user_role表示普通用户，status为1表示账号正常状态
+	stmt, err := db.Exec("insert into t_user(username, password,user_role,mailbox,status) values($1,$2,$3,$4,$5)",
+		username, password, 0, mailbox, 1)
 	if err != nil {
 		logs.Error(err)
 		return err
@@ -157,20 +156,78 @@ func GetUserInfo(username string) (user User, err error) {
 	var user_role int64
 	var head_sculpture_path string
 	var label sql.NullString
+	var mailbox string
 	var create_time time.Time
 	var status int64
-	queryStr := "select uid,user_role,head_sculpture_path, label, create_time,status from t_user where username=$1 "
-	err = db.QueryRow(queryStr, username).Scan(&uid,&user_role,&head_sculpture_path, &label, &create_time,&status)
+	queryStr := "select uid,user_role,head_sculpture_path, label, mailbox, create_time,status from t_user where username=$1 "
+	err = db.QueryRow(queryStr, username).Scan(&uid,&user_role,&head_sculpture_path, &label, &mailbox, &create_time,&status)
 	if err != nil {
 		logs.Error(err)
 		return
 	}
 	user.Uid = uid
 	user.Username = username
+	user.UserRole = user_role
 	user.HeadSculpturePath = head_sculpture_path
 	user.Label = label.String
+	user.Mailbox = mailbox
 	user.CreateTime = create_time
 	user.Status = status
 	return
-
+}
+func ModifyUserInfo(uid int, head_sculpture_path, label, mailbox string) (bool, error) {
+	if uid < 0 || len(head_sculpture_path) == 0 || len(label) == 0 {
+		err := fmt.Errorf("illegal params")
+		logs.Error(err)
+		return false, err
+	}
+	stmt, err := db.Prepare("update t_user set head_sculpture_path=$1, label=$2, mailbox=$3 where uid=$4")
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	res, err := stmt.Exec(head_sculpture_path, label, mailbox, uid)
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	affect, err := res.RowsAffected()
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	if affect == 0 {
+		return false,errors.New("Affected rows is 0 ")
+	}
+	return true, nil
+}
+func ModifyPWD(uid int, oldPassword, newPassword string)(bool, error) {
+	if uid < 0 {
+		err := fmt.Errorf("illegal params")
+		logs.Error(err)
+		return false, err
+	}
+	if len(oldPassword) == 0 || len(newPassword) == 0 {
+		logs.Info("newPassword/oldPassword is null")
+		return false, nil
+	}
+	stmt, err := db.Prepare("update t_user set password=$1 where uid=$2")
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	res, err := stmt.Exec(newPassword, uid)
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	affect, err := res.RowsAffected()
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	if affect == 0 {
+		return false,errors.New("Affected rows is 0 ")
+	}
+	return true, nil
 }

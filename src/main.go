@@ -10,8 +10,6 @@ import (
 
 func main() {
 	env.InitEnv()
-	//res, _ := models.GetGoodsByType(0,1,"")
-	//logs.Info(res)
 	mux := http.NewServeMux()
 	mux.HandleFunc("/go-helloWorld", controllers.GoHelloWorld)
 	mux.HandleFunc("/login", controllers.Login)
@@ -21,7 +19,11 @@ func main() {
 	mux.HandleFunc("/getUserInfo", controllers.GetUserInfo)
 	// 收藏夹
 	mux.HandleFunc("/getFolder", controllers.GetFolder)
+	mux.HandleFunc("/deleteDir", controllers.DeleteDir)
+    mux.HandleFunc("/addFavour", controllers.AddFavour)
 	mux.HandleFunc("/getFavourGoods", controllers.GetFavourGoods)
+	mux.HandleFunc("/seeFavourStatus", controllers.SeeFavourStatus)
+	mux.HandleFunc("/deleteFavour", controllers.DeleteFavour)
 	// 货品种类
 	mux.HandleFunc("/getGoodsType", controllers.GetGoodsType)
 	// 主页
@@ -34,6 +36,14 @@ func main() {
 	mux.HandleFunc("/uploadGood", controllers.UploadGood)
 	// 货品管理：获取货品列表
 	mux.HandleFunc("/getGoodsByCategory", controllers.GetGoodsByCategory)
+	mux.HandleFunc("/modifyGoodStatus",controllers.ModifyGoodStatus)
+	// 聊天子系统
+	mux.HandleFunc("/getSenderList", controllers.GetSenderList)
+    mux.HandleFunc("/getRecords", controllers.GetRecords)
+	mux.HandleFunc("/sendPrivateLetter", controllers.SendPrivateLetter)
+	mux.HandleFunc("/deletePrivateLetter", controllers.SendPrivateLetter)
+	// 用户个人中心
+	mux.HandleFunc("/modifyUserInfo", controllers.ModifyUserInfo)
 	err := http.ListenAndServe(":9000", mux)
 	if err != nil {
 		logs.Error(err)

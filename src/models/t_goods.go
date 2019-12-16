@@ -24,6 +24,7 @@ type Good struct {
 	// n:"openid"`
 	//Qq       string `json:"qq"`
 	ReleaseTime time.Time `json:"release_time"`
+	FirstImgPath string `json:"first_img_path"`
 }
 
 func AddGood(goodInfo *Goods) (bool, error) {
@@ -32,8 +33,8 @@ func AddGood(goodInfo *Goods) (bool, error) {
 		logs.Error(err)
 		return false, err
 	}
-	stmt, err := db.Exec("insert into t_goods(uid,gname,gprice,gdetail,category_id,gt_id) VALUES ($1,$2,$3,$4,$5,$6)",
-		goodInfo.Uid,goodInfo.Gname,goodInfo.Gprice,goodInfo.Gdetail,goodInfo.CategoryId,goodInfo.Gtid)
+	stmt, err := db.Exec("insert into t_goods(uid,gname,gprice,gdetail,category_id,gt_id,first_img_path) VALUES ($1,$2,$3,$4,$5,$6,$7)",
+		goodInfo.Uid,goodInfo.Gname,goodInfo.Gprice,goodInfo.Gdetail,goodInfo.CategoryId,goodInfo.Gtid,goodInfo.FirstImgPath)
 	if err != nil {
 		logs.Error(err)
 		return false, err
@@ -82,15 +83,15 @@ func GetAllGoods(category_id int64, label int64, keyWord string)(goodsList *[]Go
 	var query string
 	var rows *sql.Rows
 	if category_id == -1 {
-		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time)" +
+		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time,first_img_path)" +
 			"from t_goods where label=$1 and gname like $2 order by send_time asc"
 		rows, err = db.Query(query, label, keyWord)
 	}else if label == 0 {
-		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time)" +
+		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time,first_img_path)" +
 			"from t_goods where gtype=$1 and gname like $2 order by send_time asc"
 		rows, err = db.Query(query, category_id, keyWord)
 	}else {
-		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time)" +
+		query = "select(gid,uid,gtype,gname,gprice,gdetail,category_id,status,release_time,first_img_path)" +
 			"from t_goods where gtype=$1 and gname like $2 gid = (select gid from t_goods_label where label=$3)order by send_time asc"
 		rows, err = db.Query(query, category_id, keyWord,label)
 	}
@@ -112,7 +113,8 @@ func GetAllGoods(category_id int64, label int64, keyWord string)(goodsList *[]Go
 		var category_id int
 		var status int
 		var release_time time.Time
-		err = rows.Scan(&gid,&uid,&gtype,&gname,&gprice,&gdetail,&category_id,&status,&release_time)
+		var first_img_path string
+		err = rows.Scan(&gid,&uid,&gtype,&gname,&gprice,&gdetail,&category_id,&status,&release_time,&first_img_path)
 		if err != nil {
 			logs.Error(err)
 			return
@@ -126,6 +128,7 @@ func GetAllGoods(category_id int64, label int64, keyWord string)(goodsList *[]Go
 	    good.CategoryId = category_id
 	    good.Status = status
 	    good.ReleaseTime = release_time
+		good.FirstImgPath = first_img_path
 		*goodsList = append(*goodsList, good)
 	}
 	return
@@ -160,7 +163,7 @@ func DeleteGood(gid int)(bool, error) {
 
 // 获取货品的信息
 func GetGoodInfo(gid int64) (good Goods, err error){
-	queryStr := "select t_user.username, gid, uid, gname, gprice, gdetail,category_id,click_number, status, release_time,type_name from t_goods, t_user, t_goods_type "  +
+	queryStr := "select t_user.username, gid, uid, gname, gprice, gdetail,category_id,click_number, status, release_time,type_name,first_img_path from t_goods, t_user, t_goods_type "  +
 		"where  gid=$1 and t_goods.uid=t_user.uid and t_goods.gt_id=t_goods_type.gt_id;"
 	rows, err := db.Query(queryStr, gid)
 	if err != nil {
@@ -180,9 +183,10 @@ func GetGoodInfo(gid int64) (good Goods, err error){
 	var type_name string
 	var category_id int64
 	var category string
+	var first_img_path string
 	for rows.Next() {
 
-		err = rows.Scan(&username, &gid, &uid, &gname, &gprice, &gdetail, &category_id, &click_number, &status, &release_time,&type_name)
+		err = rows.Scan(&username, &gid, &uid, &gname, &gprice, &gdetail, &category_id, &click_number, &status, &release_time,&type_name,&first_img_path)
 		if err != nil {
 			logs.Error(err)
 			return
@@ -207,11 +211,12 @@ func GetGoodInfo(gid int64) (good Goods, err error){
 		good.Status = status
 		good.ReleaseTime = release_time
 		good.TypeName = type_name
+		good.FirstImgPath = first_img_path
 	}
 	return
 }
 
-
+// 获取指定货品gid的所有图片
 func GetGoodImg(gid int64)(imgList *[]GoodsImg, err error)  {
 	if gid < 1 {
 		err = fmt.Errorf("illegal gid")
@@ -264,7 +269,7 @@ func GetGoodsByCategory(uid int64, category_id int64, key string)(goodsList *[]G
     key = "%" + key + "%"
     logs.Info(key)
 
-	rows, err = db.Query("select  gid, uid, gname, gprice, gdetail,click_number, status, release_time, gt_id from t_goods where  category_id=$1 and status=$2 and uid=$3 and gname like $4;", category_id, 1, uid, key)
+	rows, err = db.Query("select  gid, uid, gname, gprice, gdetail,click_number, status, release_time, gt_id,first_img_path from t_goods where  category_id=$1 and status=$2 and uid=$3 and gname like $4;", category_id, 1, uid, key)
 	if err != nil {
 		logs.Error(err)
 		return
@@ -282,10 +287,10 @@ func GetGoodsByCategory(uid int64, category_id int64, key string)(goodsList *[]G
 	var click_number int64
 	var gt_id int64
 	var release_time time.Time
-
+    var first_img_path string
 	for rows.Next() {
 
-		err = rows.Scan(&gid, &uid,&gname, &gprice, &gdetail, &click_number, &status, &release_time, &gt_id)
+		err = rows.Scan(&gid, &uid,&gname, &gprice, &gdetail, &click_number, &status, &release_time, &gt_id, &first_img_path)
 		if err != nil {
 			logs.Error(err)
 			return
@@ -301,9 +306,37 @@ func GetGoodsByCategory(uid int64, category_id int64, key string)(goodsList *[]G
 
 		good.CategoryId = category_id
 		good.Gtid = gt_id
-
+		good.FirstImgPath = first_img_path
 		*goodsList = append(*goodsList, good)
 	}
 	logs.Info(goodsList)
 	return
+}
+
+// 改变货品状态
+func ModifyGoodStatus(gid, good_status int64)(bool, error) {
+	if gid < 1  {
+		err := fmt.Errorf("illegal param")
+		logs.Error(err)
+		return false, err
+	}
+	stmt, err := db.Prepare("update t_goods set status=$1 where gid=$2")
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	res, err := stmt.Exec(good_status, gid)
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	affect, err := res.RowsAffected()
+	if err != nil {
+		logs.Error(err)
+		return false, err
+	}
+	if affect == 0 {
+		return false,errors.New("Affected rows is 0 ")
+	}
+	return true, nil
 }

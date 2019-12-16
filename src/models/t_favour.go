@@ -8,42 +8,43 @@ import (
 	//"time"
 )
 
-func AddFavour(gid, uid int) error{
+func AddFavour(gid, uid int) (bool, error){
 	if gid < 1 || uid < 1{
 		err := fmt.Errorf("illegal param")
 		logs.Error(err)
-		return err
+		return false, err
 	}
-	stmt, err := db.Exec("insert into t_favour(gid, uid) VALUES ($1,$2)",
-		gid,uid)
+	stmt, err := db.Exec("insert into t_favour(gid, uid,fd_id) VALUES ($1,$2,$3)",
+		gid,uid,3)
 	if err != nil {
 		logs.Error(err)
-		return err
+		return false, err
 	}
 	affect, err := stmt.RowsAffected()
 	if err != nil {
 		logs.Error(err)
-		return err
+		return false, err
 	}
 	if affect == 0 {
-		return errors.New("Affected rows is 0 ")
+		return false, errors.New("Affected rows is 0 ")
 	}
-	return  nil
+	return  true, nil
 }
-func RemoveFavour(gid int, uid int) error{
-	if gid < 1 || uid < 1{
+// 在删除收藏夹的同时要删除其下所有收藏
+func RemoveFavour(fd_id int) error{
+	if fd_id < 1 {
 		err := fmt.Errorf("illegal param")
 		logs.Error(err)
 		return err
 	}
 	//删除数据
-	stmt, err := db.Prepare("delete from t_favour where uid=$1 and gid=$2")
+	stmt, err := db.Prepare("delete from t_favour where fd_id=$1 ")
     if err != nil {
     	logs.Error(err)
     	return  err
 	}
 
-	res, err := stmt.Exec(uid, gid)
+	res, err := stmt.Exec(fd_id)
 	if err != nil {
 		logs.Error(err)
 		return err
@@ -55,8 +56,8 @@ func RemoveFavour(gid int, uid int) error{
 	}
 	return nil
 }
-func SeeFavourStatus(gid int, uid int)(bool, error) {
-	if gid < 1 || uid < 1{
+func SeeFavourStatus(gid int64, uid int64)(bool, error) {
+	if gid < 0 || uid < 0 {
 		err := fmt.Errorf("illegal param")
 		logs.Error(err)
 		return false, err
@@ -102,7 +103,7 @@ func GetFavourOfGood(uid int)(glList *[]Favour, err error) {
 	}
 	return
 }
-func CancelLabel(fid int)(bool, error) {
+func CancelFavour(fid int)(bool, error) {
 	if fid < 1 {
 		err := fmt.Errorf("illegal param")
 		logs.Error(err)

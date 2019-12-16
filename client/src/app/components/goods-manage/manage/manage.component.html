@@ -1,14 +1,16 @@
 <div class="content">
     <div class="tab">
-        <div class="tab-item">
-            <p (click)="switch(0)">免费商品</p>
-        </div>
-        <div class="tab-item">
-            <p (click)="switch(1)">商品</p>
-        </div>
-        <div class="tab-item">
-            <p (click)="switch(2)">需求</p>
-        </div>
+        <ul>
+            <li (click)="switch(0)">
+                <input checked type="radio" name="check" id="active2"><label for="active2">免费商品</label>
+            </li>
+            <li (click)="switch(1)">
+                <input type="radio" name="check" id="active3"><label for="active3">商品</label>
+            </li>
+            <li (click)="switch(2)">
+                <input type="radio" name="check" id="active4"><label for="active4">需求</label>
+            </li>
+        </ul>
     </div>
     <div class="good-info">
         <div class="favour-selected">
@@ -20,7 +22,7 @@
         <div class="goods">
            <div class="good-item" *ngFor="let item of goodList">
                 <div class="img-box">
-                    <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                    <a href="./html/aodili.html"><img src="{{item.first_img_path}}"></a>
                 </div>
                 <p><a class="good-name" (click)="toDetail()">{{item.gname}}</a></p>
                 <p *ngIf="priceHidden">价格：{{item.gprice}}</p>
@@ -31,7 +33,7 @@
                     <button
                         nz-popconfirm
                         nzPopconfirmTitle="确认下架?"
-                        (nzOnConfirm)="confirm('下架')"
+                        (nzOnConfirm)="confirm('下架',item.gid)"
                         (nzOnCancel)="cancel()"
                         nzPopconfirmPlacement="top"
                         nz-button
@@ -41,7 +43,7 @@
                   <button
                         nz-popconfirm
                         nzPopconfirmTitle="确认删除?"
-                        (nzOnConfirm)="confirm('删除')"
+                        (nzOnConfirm)="confirm('删除',item.gid)"
                         (nzOnCancel)="cancel()"
                         nzPopconfirmPlacement="top"
                         nz-button

@@ -5,30 +5,20 @@
                 <div class="left-title">
                     <p>我的创建</p>
                 </div>
-                <ul>
-                    <li class="favour-nav-item">
-                        <div class="left-icon">
-                            <img src="/assets/images/新建.png">
-                        </div>
-                        <p class="right-text">
-                            新建收藏夹
-                        </p>
-                    </li>
-                    <!-- <li class="favour-nav-item">
-                        <div class="left-icon">
-                            <img src="/assets/images/收藏夹.png">
-                        </div>
-                        <p class="right-text">
-                            默认收藏夹
-                        </p>
-                    </li> -->
-                    <li class="favour-nav-item" *ngFor="let item of dirList" (click)="switch(item.fdid,item.foldername)">
-                        <div class="left-icon">
-                            <img src="/assets/images/收藏夹.png">
-                        </div>
-                        <p class="right-text">
-                            {{item.foldername}}
-                        </p>
+                <div class="favour-nav-item">
+                    <div class="left-icon">
+                        <img src="/assets/images/新建.png">
+                    </div>
+                    <p class="right-text">
+                        新建收藏夹
+                    </p>
+                </div>
+             
+                <ul nz-menu [nzMode]="'vertical'" style="width: 200px;">
+                    <li nz-submenu *ngFor="let item of dirList;let i=index;" (click)="switch(item.fd_id,item.foldername)" nzTitle="{{item.foldername}}" style="border-bottom:1px solid #ebedf0;"nzIcon="setting" >
+                        <ul>
+                        <li nz-menu-item (click)="deleteDir(i,item.fd_id)">删除</li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -43,11 +33,23 @@
                 <div class="goods">
                    <div class="good-item" *ngFor="let item of goodList">
                         <div class="img-box">
-                            <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                            <a href="./html/aodili.html"><img src="{{item.first_img_path}}"></a>
                         </div>
                         <p><a class="good-name" (click)="toDetail()">{{item.gname}}</a></p>
                         <div>
                             收藏于：{{cutTime(item.create_time)}}
+                        </div>
+                        <div>
+                            <button
+                            nz-popconfirm
+                            nzPopconfirmTitle="确认取消?"
+                            (nzOnConfirm)="confirm(item.fid)"
+                            (nzOnCancel)="cancel()"
+                            nzPopconfirmPlacement="top"
+                            nz-button
+                            >
+                            取消收藏
+                            </button>
                         </div>
                    </div>
                    <!-- <div class="good-item">
@@ -113,9 +115,6 @@
                             收藏于：10月20日
                         </div>
                    </div> -->
-                </div>
-                <div class="footer-box" style="height: 60px; width:100%; margin-top: 20px; background-color: pink;">
-
                 </div>
             </div>
         </div>

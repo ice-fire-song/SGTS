@@ -1,4 +1,13 @@
 {
+    "/secondapi": {
+        "target": "https://v0.api.upyun.com/cloud-minapp-30130",
+        "logLevel": "debug",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/secondapi": ""
+        }
+    },
     "/api": {
         "target": "http://localhost:9000",
         "logLevel": "debug",
@@ -7,5 +16,24 @@
         "pathRewrite": {
             "^/api": ""
         }
+    },
+    "/first": {
+        "target": "https://cloud.minapp.com",
+        "logLevel": "debug",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/first": ""
+        }
+    },
+    "/second": {
+        "target": "https://v0.api.upyun.com",
+        "logLevel": "debug",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/second": ""
+        }
     }
+
 }

@@ -3,8 +3,9 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router, NavigationEnd } from '@angular/router';
 import { ReqProto } from 'src/app/services/proto'
 import { LocalStorageService } from '../../services/local-storage.service';
-import axios from 'axios';//引入第三方模块进行数据请求
 import { filter } from 'rxjs/operators';
+import { UserInfoServiceService } from 'src/app/services/user-info-service.service';
+
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -25,18 +26,16 @@ export class NavigationComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private lSData: LocalStorageService,
+    private uIService: UserInfoServiceService,
     private reqProto: ReqProto,
   ) { 
-    // this.router.events.subscribe((event)=>{
-    //   console.log("event:", event)
-      
-    // })
+
+    // 捕捉路由事件
     this.router.events.pipe(filter((event) => event instanceof NavigationEnd))
     .subscribe((event:NavigationEnd) => {
       console.log("event.url:", event.url)
-      if (event.url != "/login") {
+      if (event.url != "/login" && event.url != "/" && event.url != "/register" ){
         this.Ishide = true;
-        let that = this
         this.http.get("/api/login").subscribe((res: any) => {
           console.log("login:res:",res);
           this.userStatus = res.data;
@@ -47,6 +46,7 @@ export class NavigationComponent implements OnInit {
             this.http.post("/api/getUserInfo", this.reqProto, this.httpOptions).subscribe((res: any) => {
               console.log(res);
               this.userInfo = res.data;
+              this.uIService.emitTitle(JSON.stringify(res.data));
             })
           } else {
             this.userInfo = {
@@ -63,15 +63,6 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit() {
-    // setTimeout("console.log('navigation 等待1s，为了判断isLogin')",1000);
-    // let isLogin = this.lSData.get("isLogin");
-    // console.log("isLogin: ",isLogin)
-    // if (isLogin) {
-    //   this.Ishide = false;
-    //   console.log("现在在login页面")
-     
-    //   return
-    // }
 
   }
   clickHeadImg() {
@@ -94,14 +85,16 @@ export class NavigationComponent implements OnInit {
     console.log(navName)
     if (navName == "登录") {
       this.router.navigate(['/login']);
-    }else if (navName == "个人中心") {
-      this.router.navigate(['/peronalCenter'], { queryParams: {uid: this.uid} });
+    } else if (navName == "个人中心") {
+      this.router.navigate(['/personalcenter'], { queryParams: {uid: this.uid} });
     }else  if (navName == "私信") {
       this.router.navigate(['/chat'], { queryParams:  {uid: this.uid}  });
     }else  if (navName == "收藏") {
       this.router.navigate(['/favour'], { queryParams:  {uid: this.uid} });
     }else if (navName == "发布中心" || navName == "上传") {
       this.router.navigate(['/goodsmanage'], { queryParams:  {uid: this.uid} });
+    } else if (navName == "主站") {
+      this.router.navigate(['/home']);
     }
     
   }

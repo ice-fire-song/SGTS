@@ -17,3 +17,10 @@ export class ReqProto {
     page?: number;       //分页
     pageSize?: number;   //分页大小
 }
+export class Uploadfile {
+    gid?: number;         // 货品id
+    image_name?: string;     // 图片名称
+    image_ext?: string;        // 图片扩展名
+    save_path?: string;       // 图片路径
+    image_size?: number;       // 图片大小
+  }

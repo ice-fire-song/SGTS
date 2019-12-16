@@ -13,7 +13,6 @@ func GoHelloWorld(w http.ResponseWriter, r *http.Request) {
 
 // 获取货品种类
 func GetGoodsType(w http.ResponseWriter, r *http.Request) {
-
 	respData, err := models.GetGoodsType()
 	logs.Info(respData)
 	if err != nil {

@@ -24,14 +24,20 @@ export class RegisterComponent implements OnInit {
     let that = this
     var url = "/api/register"
     console.log(this.reqProto)
-    // let formData = {
-    //   username: this.username,
-    //   password: this.password
-    // }
     this.reqProto.data = value;
-    that.http.post(url, this.reqProto, httpOptions).subscribe(res => {
+    that.http.post(url, this.reqProto, httpOptions).subscribe((res:any) => {
       console.log(res);
-      this.router.navigate(['/login'])
+      if (res.data.is_user_exist) {
+        this.nzMessageService.warning("该用户名已被使用，请修改用户名");
+      } else {
+        if (res.data.success) {
+          this.nzMessageService.info("注册成功，请登录");
+          this.router.navigate(['/login'])
+        } else {
+          this.nzMessageService.error("注册失败，请重新注册");
+        }
+      }
+   
     });
   }
 

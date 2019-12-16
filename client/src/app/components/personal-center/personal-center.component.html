@@ -1,0 +1,46 @@
+<div class="background">
+    <div class="main">
+        <div class="content-box">
+            <div class="avatar">
+                <nz-avatar nzIcon="user" style="width:50px;height:50px;border:0.2px solid rgb(202, 200, 200);margin-right: 18px;" nzSrc="{{head_sculpture_path}}" (click)="clickHeadImg()"></nz-avatar>  
+                <p>{{username}}</p>
+            </div>
+            <div class="base-box">
+                <ul>
+                    <li>
+                        <div class="row-left">标签</div>
+                        <div class="row-right"><input type="text" [(ngModel)]="label" placeholder="还没有标签，请添加"></div>
+                    </li>
+                    <li>
+                        <div class="row-left">邮箱</div>
+                        <div class="row-right"><input type="text" [(ngModel)]="mailbox"></div>
+                    </li>
+                    <li>
+                        <div class="row-left">原密码</div>
+                        <div class="row-right"><input type="password"placeholder="修改密码前，请输入原密码" [(ngModel)]="oldPassword"></div>
+                    </li>
+                    <li>
+                        <div class="row-left">新密码</div>
+                        <div class="row-right"><input type="password"placeholder="请输入新密码" [(ngModel)]="newPassword"></div>
+                    </li>
+                    <li>
+                        <div class="row-left">重新确认密码</div>
+                        <div class="row-right"><input type="password" placeholder="请重新确认密码" [(ngModel)]="correctNewPassword"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="submit">
+                <button
+                nz-popconfirm
+                nzPopconfirmTitle="确认修改?"
+                (nzOnConfirm)="confirm()"
+                (nzOnCancel)="cancel()"
+                nzPopconfirmPlacement="bottom"
+                nz-button
+              >
+                提交修改
+              </button>
+            </div>
+        </div>
+    </div>
+</div>

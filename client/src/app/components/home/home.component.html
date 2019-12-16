@@ -96,7 +96,7 @@
                         <div class="goods">
                            <div class="good-item" *ngFor="let item of goodList">                      
                                 <div class="img-box">
-                                    <a href="./html/aodili.html"><img src="/assets/images/奥地利.jpg"></a>
+                                    <a (click)="toDetail(item)"><img src="{{item.first_img_path}}"></a>
                                 </div>
                                 <div class="good-content">
                                     <p><a class="good-name" (click)="toDetail(item)">{{item.gname}}</a></p>

@@ -9,30 +9,32 @@ html body {
 }
 .content {
     width: 80%;
-    height: 800px;
-    margin: auto auto;
+    height: 700px;
+    margin: 10px auto;
     padding: 10px 20px 10px 20px;
-    border: 0.1px solid #a59d9d;
+    border: 1px solid #ebedf0;
+    border-radius: 15px;
     display: flex;
     flex-direction: row;
     
 }
 .content .left {
     flex: 1;
-    border: 0.1px solid #a59d9d;
+    border: 1px solid #ebedf0;
 }
 .content .right {
     flex: 4;
     margin-left: 8px;
-    border: 0.1px solid #a59d9d;
+    border: 1px solid #ebedf0;
 }
 /* 左边收藏夹导航栏 */
 .left-title {
     width: 100%;
     height: 40px;
-    border-bottom: 0.1px solid #a59d9d;
+    border-bottom: 1px solid #ebedf0;
     line-height: 40px;
     text-align: center;
+    font-size: 18px;
 }
 .content ul {
     width: 100%;
@@ -40,13 +42,13 @@ html body {
  .favour-nav-item {
     width: 100%;
     height: 40px;
-    line-height: 40px;
     display: flex;
     flex-direction: row;
+    justify-items: center;
     padding-top: 5px;
     padding-bottom: 5px;
     box-sizing: border-box;
-    border-bottom: 0.1px solid rgb(199, 191, 191);
+    border-bottom: 1px solid #ebedf0;
  }
  .left-icon {
      flex: 1;
@@ -59,42 +61,50 @@ html body {
  .right-text {
      flex: 1;
  }
-
  /* 右边收藏展示栏 */
  /* 上部 */
  .favour-selected {
-     width: 100%;
-     height: 40px;
-     border: 0.1px solid #a59d9d;
-     border-radius: 5px;
-     /* line-height: 40px; */
- }
- .name {
-    float: left;
-    margin-left: 5px;
- }
- .search-box {
-    float: right;
-    height: 100%;
-    margin-right: 50px;
- }
- #key {
-     width: 160px;
-     height: 28px;
-     border-radius: 5px;
- }
- .search-btn {
-     height: 28px;
-     width: 70px;
-     background-color: #169BD5;
-     border-radius: 5px;
- }
+    width: 100%;
+    height: 60px;
+    padding: 8px;
+    border-bottom: 1px solid #ebedf0;
+    /* line-height: 40px; */
+}
+.name {
+   float: left;
+   margin-left: 5px;
+   font-size: 17px;
+}
+.search-box {
+   float: right;
+   height: 100%;
+   margin-right: 50px;
+}
+input{  
+    background:none;  
+    outline:none;  
+    border:1px solid #ccc;
+}
+input:focus {   
+    border:none;
+}
+#key {
+    width: 160px;
+    height: 28px;
+    border-radius: 5px;
+}
+.search-btn {
+    height: 28px;
+    width: 70px;
+    outline: none;    
+    background-color: #169BD5;
+    border-radius: 5px;
+}
  /* 下部 */
  .goods {
      width: 100%;
      height: 680px;
      font-size: 15px;
-     border: 0.1px solid #a59d9d;
      font-family: 'Courier New', Courier, monospace;
 
  }
@@ -102,10 +112,10 @@ html body {
 
     width: 32%;
     float: left;
-    margin-top:10px;
+    margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    border: 0.1px solid #a59d9d;
+    border: 0.5px solid #ebedf0;
     border-radius: 3px 3px 0 0;
 }
 .good-item .img-box {

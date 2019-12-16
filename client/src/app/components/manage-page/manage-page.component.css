@@ -1,0 +1,79 @@
+.background, .main {
+    width: 100%;
+}
+.data-box {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ebedf0;
+    
+}
+nz-select {
+    width: 100px;
+}
+.select-box {
+    display: flex;
+    flex-direction: row;
+    height: 77px;
+    /* align-items: center; */
+    /* line-height: 100px; */
+    padding: 20px;
+}
+.src-box {
+    flex: 2;
+}
+.container {
+    flex: 1;
+}
+.src-box {
+    display: flex;
+    flex: row;
+}
+.src-box .src-all {
+    flex: 0.5;
+}
+.src-box .src1 {
+    flex: 1;
+}
+
+
+/*搜索框7*/
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    /* height: 70px;
+    width: 800px;
+    margin: 100px auto 0 auto; */
+    width: 100%;
+    height: 100%;
+}
+.parent {
+    position: relative;
+}
+.input-search {
+    width: 80%;
+    height: 30px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    position: absolute;
+    right: 0;
+}
+.btn {
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    background: url(/assets/images/search.png) no-repeat;
+    background-size: 100% 100%;
+    top: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    right: 16px;
+}
+#divider {
+    margin-left: 5px;
+    margin-right: 5px;
+}

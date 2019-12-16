@@ -23,7 +23,11 @@ import { ManageComponent } from './components/goods-manage/manage/manage.compone
 import { GoodDetailComponent } from './components/good-detail/good-detail.component';
 
 import { LocalStorageService } from './services/local-storage.service';
+
+import { UserInfoServiceService } from './services/user-info-service.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { PersonalCenterComponent } from './components/personal-center/personal-center.component';
+import { ManagePageComponent } from './components/manage-page/manage-page.component';
 
 registerLocaleData(en);
 
@@ -41,6 +45,8 @@ registerLocaleData(en);
     ManageComponent,
     GoodDetailComponent,
     NavigationComponent,
+    PersonalCenterComponent,
+    ManagePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, ReqProto, LocalStorageService],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, ReqProto, LocalStorageService,UserInfoServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
